@@ -3,7 +3,7 @@ const productButton = document.querySelector('.relevant-product_top button');
 const closeRelevantProduct = () => {
     const relevantProduct = document.querySelector('.relevant-product_top');
     
-    relevantProduct.style.display = 'none';
+    relevantProduct.classList.add('height-zero');
 };
 
 productButton.addEventListener('click', closeRelevantProduct);

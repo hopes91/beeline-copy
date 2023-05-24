@@ -25,10 +25,15 @@ header {
 
 .relevant-product_top {
     background-color: #FFCC00;
-    display: block;
     height: 48px;
     position: relative;
+    overflow: hidden;
     width: 100%;
+}
+
+.height-zero {
+    height: 0;
+    transition: height 0.3s;
 }
 
 .product-link {
