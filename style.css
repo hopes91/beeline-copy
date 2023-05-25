@@ -87,3 +87,22 @@ header {
 .bar_top {
     padding: 16px 0 5px 0;
 }
+
+.regions {
+    width: 200px;
+}
+
+.regions button {
+    padding: 0;
+}
+
+.regions svg,
+.regions span {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.regions span {
+    font-weight: bold;
+    letter-spacing: 0.5px;
+}
