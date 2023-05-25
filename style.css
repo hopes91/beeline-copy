@@ -1,6 +1,7 @@
 body {
     color: #191c22;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Jost', sans-serif;
+    letter-spacing: 0.5px;
     margin: 0;
     padding: 0;
 }
