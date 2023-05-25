@@ -1,8 +1,6 @@
 body {
     color: #191c22;
     font-family: 'Jost', sans-serif;
-    font-size: 16px;
-    letter-spacing: 0.5px;
     margin: 0;
     padding: 0;
 }
@@ -22,6 +20,10 @@ button {
     border: none;
     cursor: pointer;
     font-family: 'Jost', sans-serif;
+}
+
+li {
+    list-style-type: none;
 }
 
 header {
@@ -62,7 +64,7 @@ header {
 }
 
 .product-wrapper span {
-    font-size: 0.9em;
+    font-size: 15px;
     font-weight: 600;
     position: absolute;
     top: 30%;
@@ -85,11 +87,14 @@ header {
 }
 
 .bar_top {
+    display: flex;
+    justify-content: space-between;
     padding: 16px 0 5px 0;
 }
 
 .regions {
-    width: 200px;
+    max-width: 180px;
+    width: 100%;
 }
 
 .regions button {
@@ -105,4 +110,50 @@ header {
 .regions span {
     font-weight: bold;
     letter-spacing: 0.5px;
+}
+
+.navbar_left {
+    display: flex;
+    margin-right: auto;
+}
+
+.navbar_right {
+    margin-left: auto;
+}
+
+.navbar > ul {
+    display: flex;
+}
+
+.navbar ul {
+    margin: 0;
+    padding: 0;
+}
+
+.navbar .nested {
+    display: none;
+}
+
+.navbar li {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.navbar_left > ul li:first-child {
+    cursor: pointer;
+    margin: 0 16px;
+}
+
+.navbar_left .show-more-arrow svg {
+    /* display: inline-flex; */
+    fill: #191c22;
+    /* margin-left: 5px; */
+}
+
+.navbar_right > ul li {
+    margin-right: 32px;
+}
+
+.navbar_right > ul li:last-child {
+    margin-right: 0;
 }
