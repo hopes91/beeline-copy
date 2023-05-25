@@ -16,12 +16,15 @@ img {
     border: none;
 }
 
-/* .container {
-
-} */
+button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-family: 'Jost', sans-serif;
+}
 
 header {
-    height: 200px;
+    border-bottom: 1px solid lightgray;
 }
 
 .relevant-product_top {
@@ -64,12 +67,21 @@ header {
 }
 
 .relevant-product_top button {
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
     font-size: 0;
     padding: 12px;
     position: absolute;
     right: 0;
     top: 0;
+}
+
+.navbar_top {
+    box-sizing: border-box;
+    margin: 0 auto;
+    max-width: 1310px;
+    padding: 0 20px;
+    width: 100%;
+}
+
+.bar_top {
+    padding: 16px 0 5px 0;
 }
