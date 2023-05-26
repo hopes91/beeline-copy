@@ -92,27 +92,63 @@ header {
     padding: 16px 0 5px 0;
 }
 
-.regions {
+.your-region {
     max-width: 180px;
     position: relative;
     width: 100%;
 }
 
-.regions button {
+.your-region button {
     padding: 0;
     position: absolute;
     top: 0;
 }
 
-.regions svg,
-.regions span {
+.your-region svg,
+.your-region span {
     display: inline-block;
     vertical-align: middle;
 }
 
-.regions span {
+.your-region span {
     font-weight: bold;
     letter-spacing: 0.5px;
+}
+
+.regions-popup {
+    background-color: #fbfbfb;
+    border: 1px solid #d9d9d9;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px hsla(0, 0%, 40%, 0.08);
+    position: absolute;
+    /* visibility: hidden; */
+}
+
+.popup-header {
+    border-bottom: 1px solid #d9d9d9;
+    padding: 64px 96px 24px;
+    position: relative;
+}
+
+.popup-header button {
+    font-size: 0;
+    padding: 12px;
+    position: absolute;
+    right: 32px;
+    top: 32px;
+}
+
+.popup-header input {
+    background-color: #fff;
+    border: 1px solid #d9d9d9;
+    border-radius: 12px;
+    font-size: 14px;
+    padding: 12px;
+    width: 100%;
+}
+
+.popup-content {
+    padding: 16px;
 }
 
 .navbar_left {
