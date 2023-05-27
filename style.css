@@ -89,7 +89,7 @@ header {
 .bar_top {
     display: flex;
     justify-content: space-between;
-    padding: 16px 0 5px 0;
+    padding: 16px 0 5px;
 }
 
 .your-region {
@@ -121,13 +121,18 @@ header {
     border-radius: 12px;
     box-shadow: 0 8px 24px hsla(0, 0%, 40%, 0.08);
     position: absolute;
-    /* visibility: hidden; */
+    visibility: hidden;
 }
 
 .popup-header {
     border-bottom: 1px solid #d9d9d9;
-    padding: 64px 96px 24px;
+    padding: 64px 96px 24px 96px;
     position: relative;
+}
+
+.popup-header h3 {
+    font-size: 32px;
+    margin-bottom: 24px;
 }
 
 .popup-header button {
@@ -143,12 +148,15 @@ header {
     border: 1px solid #d9d9d9;
     border-radius: 12px;
     font-size: 14px;
+    outline: #d9d9d9;
     padding: 12px;
     width: 100%;
 }
 
 .popup-content {
-    padding: 16px;
+    max-height: 540px;
+    overflow-y: auto;
+    padding: 24px 96px 0 96px;
 }
 
 .navbar_left {
@@ -214,4 +222,16 @@ header {
 
 .navbar_right > ul li:last-child {
     margin-right: 0;
+}
+
+.bar_bottom {
+    display: flex;
+    justify-content: space-between;
+    padding: 16px 0;
+}
+
+.bar_bottom .logo img {
+    display: block;
+    height: 32px;
+    width: 32px;
 }
