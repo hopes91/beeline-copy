@@ -304,3 +304,38 @@ header {
     padding: 12px 40px;
     width: 100%;
 }
+
+.bar_bottom .hidden-buttons {
+    display: none;
+}
+
+.hidden-buttons button {
+    border-radius: 8px;
+    color: #191c22;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    padding: 8px 24px;
+}
+
+.hidden-buttons button[type="submit"] {
+    background-color: #ffe632;
+    border: 1px solid #ffe632;
+    margin-right: 12px;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+.hidden-buttons button[type="submit"]:hover {
+    background-color: #ffd93a;
+    border-color: #ffd93a;
+}
+
+.hidden-buttons button[type="button"] {
+    border: 1px solid #191c22;
+    background-color: #ffffff;
+    transition: border-color 0.3s, color 0.3s;
+}
+
+.hidden-buttons button[type="button"]:hover {
+    border: 1px solid #f45151;
+    color: #f45151;
+}
