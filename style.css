@@ -203,24 +203,24 @@ header {
     position: absolute;
 }
 
-.navbar_left .nested-nav li {
+.nested-nav li {
     border-bottom: 1px solid #d9d9d9;
     padding: 10px 16px;
 }
 
-.navbar_left .nested-nav li:last-child {
+.nested-nav li:last-child {
     border-bottom: none;
 }
 
-.navbar_left .show-more-arrow svg {
+.with-nested-nav .show-more-arrow svg {
     fill: #191c22;
 }
 
-.navbar_right > ul li {
+.navbar_right ul li {
     margin-right: 32px;
 }
 
-.navbar_right > ul li:last-child {
+.navbar_right ul li:last-child {
     margin-right: 0;
 }
 
@@ -234,4 +234,39 @@ header {
     display: block;
     height: 32px;
     width: 32px;
+}
+
+.bar_bottom .catalog button {
+    border: 1px solid #ffe632;
+    border-radius: 8px;
+    background-color: #ffe632;
+    padding: 8px 16px;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+.bar_bottom .catalog button:hover {
+    background-color: #ffd93a;
+    border-color: #ffd93a;
+}
+
+.catalog .svg-wrapper {
+    display: inline-block;
+    height: 24px;
+    width: 24px;
+}
+
+.catalog .svg-wrapper svg {
+    font-size: 0;
+    line-height: 0;
+}
+
+.catalog span {
+    font-weight: bold;
+    letter-spacing: 0.6px;
+    padding-left: 6px;
+}
+
+.catalog .svg-wrapper,
+.catalog span {
+    vertical-align: middle;
 }
