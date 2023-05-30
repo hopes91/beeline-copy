@@ -317,25 +317,29 @@ header {
     padding: 8px 24px;
 }
 
-.hidden-buttons button[type="submit"] {
+.hidden-buttons #search {
     background-color: #ffe632;
     border: 1px solid #ffe632;
     margin-right: 12px;
     transition: background-color 0.3s, border-color 0.3s;
 }
 
-.hidden-buttons button[type="submit"]:hover {
+.hidden-buttons #search:hover {
     background-color: #ffd93a;
     border-color: #ffd93a;
 }
 
-.hidden-buttons button[type="button"] {
+.hidden-buttons #close-search {
     border: 1px solid #191c22;
     background-color: #ffffff;
     transition: border-color 0.3s, color 0.3s;
 }
 
-.hidden-buttons button[type="button"]:hover {
+.hidden-buttons #close-search:hover {
     border: 1px solid #f45151;
     color: #f45151;
+}
+
+.search-info-wrapper {
+    display: none;
 }
