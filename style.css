@@ -286,13 +286,18 @@ header {
     vertical-align: middle;
 }
 
-.bar_bottom .search-bar {
+.center {
+    display: flex;
     margin: 0 24px 0 16px;
     position: relative;
     width: 100%;
 }
 
-.search-bar::before {
+.search-bar-wrapper {
+    width: 100%;
+}
+
+.search-bar-wrapper::before {
     background-image: url(https://static.beeline.ru/upload/images/e-shop/icons/search.svg);
     background-repeat: no-repeat;
     background-size: cover;
@@ -315,8 +320,9 @@ header {
     width: 100%;
 }
 
-.bar_bottom .hidden-buttons {
+.hidden-buttons {
     display: none;
+    margin-left: 24px;
 }
 
 .hidden-buttons button {
