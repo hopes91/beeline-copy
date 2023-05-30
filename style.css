@@ -78,6 +78,12 @@ header {
     top: 0;
 }
 
+.bar_top {
+    display: flex;
+    justify-content: space-between;
+    padding: 16px 0 5px;
+}
+
 .navbar_top {
     box-sizing: border-box;
     margin: 0 auto;
@@ -181,12 +187,12 @@ header {
     font-weight: bold;
 }
 
-.navbar_left li.with-nested-nav {
+.with-nested-nav {
     cursor: pointer;
     margin: 0 16px;
 }
 
-.navbar_left .nested-nav-wrapper {
+.nested-nav-wrapper {
     display: none;
     padding-top: 12px;
 }
@@ -195,7 +201,7 @@ header {
     display: block;
 }
 
-.navbar_left .nested-nav {
+.nested-nav {
     background-color: #fbfbfb;
     border: 1px solid #d9d9d9;
     border-radius: 12px;
@@ -225,54 +231,58 @@ header {
 }
 
 .bar_bottom {
+    align-content: center;
     display: flex;
     justify-content: space-between;
     padding: 16px 0;
 }
 
-.bar_bottom .logo img {
+.left {
+    display: flex;
+}
+
+.logo-img {
     display: block;
     height: 32px;
+    padding-top: 4px;
     width: 32px;
 }
 
-.bar_bottom .catalog {
-    margin-left: 32px;
-}
-
-.catalog button {
+.catalog-button {
     background-color: #ffe632;
     border: 1px solid #ffe632;
     border-radius: 8px;
-    padding: 8px 12px;
+    box-sizing: border-box;
+    margin-left: 32px;
+    padding: 7px 12px;
     transition: background-color 0.3s, border-color 0.3s;
     width: 110px;
 }
 
-.catalog button:hover {
+.catalog-button:hover {
     background-color: #ffd93a;
     border-color: #ffd93a;
 }
 
-.catalog .svg-wrapper {
+.svg-wrapper {
     display: inline-block;
     height: 24px;
     width: 24px;
 }
 
-.catalog .svg-wrapper svg {
+.svg-wrapper svg {
     font-size: 0;
     line-height: 0;
 }
 
-.catalog span {
+.catalog-button span {
     font-weight: bold;
     letter-spacing: 0.6px;
     padding-left: 6px;
 }
 
-.catalog .svg-wrapper,
-.catalog span {
+.catalog-button .svg-wrapper,
+.catalog-button span {
     vertical-align: middle;
 }
 
