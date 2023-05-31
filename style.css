@@ -302,11 +302,11 @@ header {
 
 #search-bar {
     background-color: #fbfbfb;
-    border: 1px solid #e2e2e8;
+    border: 1px solid #dfe0e5;
     border-radius: 12px;
     box-sizing: border-box;
     font-size: 12px;
-    outline: #e2e2e8;
+    outline: #dfe0e5;
     padding: 12px 40px;
     width: 100%;
 }
