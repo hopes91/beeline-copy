@@ -213,10 +213,6 @@ header {
     border-bottom: none;
 }
 
-.with-nested-nav .show-more-arrow svg {
-    fill: #191c22;
-}
-
 .navbar_right ul li {
     margin-right: 32px;
 }
