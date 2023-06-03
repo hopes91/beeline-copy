@@ -383,6 +383,25 @@ header {
     margin-top: -8px;
 }
 
+.login-button-wrapper {
+    margin-left: 20px;
+}
+
+#login-button {
+    background-color: #191c22;
+    color: #ffffff;
+    border: 1px solid #191c22;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    padding: 9px 24px;
+}
+
 .search-info-wrapper {
+    display: none;
+}
+
+.login-wrapper {
     display: none;
 }
