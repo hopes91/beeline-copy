@@ -10,6 +10,14 @@ const closeRelevantProduct = () => {
 // toggle search bar's hidden content
 const searchBar = document.getElementById('search-bar');
 
+const hideButtonsToTheRight = () => {
+    const buttonsToTheRight = document.querySelector('.bar_bottom .right');
+
+    buttonsToTheRight.style.display = 'none';
+
+    hideCatalogButton();
+};
+
 const hideCatalogButton = () => {
     const catalogButton = document.querySelector('.catalog-button');
 
@@ -54,8 +62,16 @@ const showCatalogButton = () => {
     const catalogButton = document.querySelector('.catalog-button');
 
     catalogButton.style.display = 'inline-block';
+
+    showButtonsToTheRight();
+};
+
+const showButtonsToTheRight = () => {
+    const buttonsToTheRight = document.querySelector('.bar_bottom .right');
+
+    buttonsToTheRight.style.display = 'flex';
 };
 
 productButton.addEventListener('click', closeRelevantProduct);
-searchBar.addEventListener('focus', hideCatalogButton);
+searchBar.addEventListener('focus', hideButtonsToTheRight);
 closeButton.addEventListener('click', hideSearchInfo);
