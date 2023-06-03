@@ -351,6 +351,37 @@ header {
     color: #f45151;
 }
 
+.right {
+    display: flex;
+    margin-left: auto;
+}
+
+.chat-button-wrapper,
+.cart-link-wrapper {
+    padding: 0 12px;
+}
+
+.chat-button-wrapper button,
+.cart-link-wrapper a {
+    margin-top: 4px;
+}
+
+.chat-button-wrapper button {
+    padding: 0;
+}
+
+.cart-link-wrapper a {
+    display: block;
+    font-size: 13px;
+    text-align: center;
+}
+
+.chat-button-wrapper span,
+.cart-link-wrapper span {
+    display: block;
+    margin-top: -8px;
+}
+
 .search-info-wrapper {
     display: none;
 }
