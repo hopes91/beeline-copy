@@ -9,21 +9,53 @@ const closeRelevantProduct = () => {
 
 // toggle search bar's hidden content
 const searchBar = document.getElementById('search-bar');
-const hiddenButtons = document.querySelector('.hidden-buttons');
-const searchInfo = document.querySelector('.search-info-wrapper');
+
+const hideCatalogButton = () => {
+    const catalogButton = document.querySelector('.catalog-button');
+
+    catalogButton.style.display = 'none';
+
+    showHiddenButtons();
+};
+
+const showHiddenButtons = () => {
+    const hiddenButtons = document.querySelector('.hidden-buttons');
+
+    hiddenButtons.style.display = 'flex';
+
+    showSearchInfo();
+};
 
 const showSearchInfo = () => {
-    hiddenButtons.style.display = 'flex';
+    const searchInfo = document.querySelector('.search-info-wrapper');
+
     searchInfo.style.display = 'block';
 };
 
 const closeButton = document.getElementById('close-search');
 
-const closeSearchInfo = () => {
-    hiddenButtons.style.display = 'none';
+const hideSearchInfo = () => {
+    const searchInfo = document.querySelector('.search-info-wrapper');
+
     searchInfo.style.display = 'none';
+
+    hideHiddenButtons();
 };
 
-closeButton.addEventListener('click', closeSearchInfo);
-searchBar.addEventListener('focus', showSearchInfo);
+const hideHiddenButtons = () => {
+    const hiddenButtons = document.querySelector('.hidden-buttons');
+
+    hiddenButtons.style.display = 'none';
+
+    showCatalogButton();
+};
+
+const showCatalogButton = () => {
+    const catalogButton = document.querySelector('.catalog-button');
+
+    catalogButton.style.display = 'inline-block';
+};
+
 productButton.addEventListener('click', closeRelevantProduct);
+searchBar.addEventListener('focus', hideCatalogButton);
+closeButton.addEventListener('click', hideSearchInfo);

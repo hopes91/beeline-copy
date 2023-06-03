@@ -232,6 +232,10 @@ header {
     display: flex;
 }
 
+.logo-link {
+    margin-right: 16px;
+}
+
 .logo-img {
     display: block;
     height: 32px;
@@ -244,7 +248,7 @@ header {
     border: 1px solid #ffe632;
     border-radius: 8px;
     box-sizing: border-box;
-    margin-left: 32px;
+    margin: 0 16px;
     padding: 7px 12px;
     transition: background-color 0.3s, border-color 0.3s;
     width: 110px;
@@ -255,13 +259,13 @@ header {
     border-color: #ffd93a;
 }
 
-.svg-wrapper {
+.catalog-button .svg-wrapper {
     display: inline-block;
     height: 24px;
     width: 24px;
 }
 
-.svg-wrapper svg {
+.catalog-button .svg-wrapper svg {
     font-size: 0;
     line-height: 0;
 }
@@ -279,7 +283,7 @@ header {
 
 .center {
     display: flex;
-    margin: 0 24px 0 16px;
+    margin-right: 24px;
     position: relative;
     width: 100%;
 }
@@ -313,7 +317,7 @@ header {
 
 .hidden-buttons {
     display: none;
-    margin-left: 24px;
+    margin-left: auto;
 }
 
 .hidden-buttons button {
@@ -327,7 +331,7 @@ header {
 .hidden-buttons #search {
     background-color: #ffe632;
     border: 1px solid #ffe632;
-    margin-right: 12px;
+    margin: 0 12px;
     transition: background-color 0.3s, border-color 0.3s;
 }
 
