@@ -9,15 +9,15 @@ const closeRelevantProduct = () => {
 
 // toggle regions popup
 const chosenRegionButton = document.querySelector('.chosen-region button');
-const regionsPopupWrapper = document.querySelector('.regions-popup-wrapper');
+const regionsWrapper = document.querySelector('.regions-wrapper');
 
 const showRegionsPopup = () => {
-    regionsPopupWrapper.style.display = 'block';
+    regionsWrapper.style.display = 'block';
 };
 
 const hideRegionsPopup = event => {
-    if (event.target.classList.contains('close')) {
-        regionsPopupWrapper.style.display = 'none';
+    if (event.currentTarget.classList.contains('close')) {
+        regionsWrapper.style.display = 'none';
     }
 };
 
@@ -86,8 +86,22 @@ const showButtonsToTheRight = () => {
     buttonsToTheRight.style.display = 'flex';
 };
 
+// close popups or additional info blocks
+const closeOnEsc = event => {
+    if (event.keyCode === 27) {
+        const popups = document.querySelectorAll('.popup');
+
+        popups.forEach(popup => {
+            if (popup.style.display !== 'none') {
+                popup.style.display = 'none';
+            }
+        });
+    }
+};
+
 productButton.addEventListener('click', closeRelevantProduct);
 chosenRegionButton.addEventListener('click', showRegionsPopup);
-regionsPopupWrapper.addEventListener('click', hideRegionsPopup);
+regionsWrapper.addEventListener('click', hideRegionsPopup);
 searchBar.addEventListener('focus', hideButtonsToTheRight);
 closeButton.addEventListener('click', hideSearchInfo);
+window.addEventListener('keydown', closeOnEsc);

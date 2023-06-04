@@ -116,7 +116,7 @@ header {
     letter-spacing: 0.5px;
 }
 
-.regions-popup-wrapper {
+.regions-wrapper {
     background-color: rgba(0, 0, 0, 0.4);
     display: none;
     height: 100vh;
@@ -127,7 +127,7 @@ header {
     z-index: 1000;
 }
 
-.regions-popup {
+.regions {
     animation: slide-down 0.5s forwards;
     background-color: #ffffff;
     border: 1px solid #dfe0e5;
