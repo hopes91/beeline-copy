@@ -226,9 +226,7 @@ header {
 }
 
 .with-nested-nav {
-    cursor: pointer;
     margin: 0 16px;
-    /* add outline */
 }
 
 .nested-nav-wrapper {
