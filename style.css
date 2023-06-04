@@ -31,6 +31,10 @@ header {
     border-bottom: 1px solid #dfe0e5;
 }
 
+header * {
+    outline-color: #FFCC00;
+}
+
 .banner_top {
     background-color: #FFCC00;
     height: 48px;
@@ -325,6 +329,10 @@ header {
     border-color: #ffd93a;
 }
 
+.catalog-button:focus {
+    background-color: #FFCC00;
+}
+
 .catalog-button .svg-wrapper {
     display: inline-block;
     height: 24px;
@@ -375,7 +383,6 @@ header {
     border-radius: 12px;
     box-sizing: border-box;
     font-size: 12px;
-    outline: #dfe0e5;
     padding: 12px 40px;
     width: 100%;
 }
@@ -405,15 +412,24 @@ header {
     border-color: #ffd93a;
 }
 
+.hidden-buttons #search:focus {
+    background-color: #FFCC00;
+}
+
 .hidden-buttons #close-search {
-    border: 1px solid #191c22;
     background-color: #ffffff;
+    border: 1px solid #191c22;
     transition: border-color 0.3s, color 0.3s;
 }
 
 .hidden-buttons #close-search:hover {
-    border: 1px solid #f45151;
+    border-color: #f45151;
     color: #f45151;
+}
+
+.hidden-buttons #close-search:focus {
+    border-color: #191c22;
+    color: #191c22;
 }
 
 .right {
@@ -469,8 +485,11 @@ header {
     font-size: 14px;
     font-weight: bold;
     letter-spacing: 0.5px;
-    outline-color: #ffd93a;
     padding: 9px 24px;
+}
+
+#login-button:focus {
+    color: #D9D9D9;
 }
 
 .search-info-wrapper {
