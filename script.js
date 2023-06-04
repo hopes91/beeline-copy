@@ -7,6 +7,20 @@ const closeRelevantProduct = () => {
     relevantProduct.classList.add('height-zero');
 };
 
+// toggle regions popup
+const chosenRegionButton = document.querySelector('.chosen-region button');
+const regionsPopupWrapper = document.querySelector('.regions-popup-wrapper');
+
+const showRegionsPopup = () => {
+    regionsPopupWrapper.style.display = 'block';
+};
+
+const hideRegionsPopup = event => {
+    if (event.target.classList.contains('close')) {
+        regionsPopupWrapper.style.display = 'none';
+    }
+};
+
 // toggle search bar's hidden content
 const searchBar = document.getElementById('search-bar');
 
@@ -73,5 +87,7 @@ const showButtonsToTheRight = () => {
 };
 
 productButton.addEventListener('click', closeRelevantProduct);
+chosenRegionButton.addEventListener('click', showRegionsPopup);
+regionsPopupWrapper.addEventListener('click', hideRegionsPopup);
 searchBar.addEventListener('focus', hideButtonsToTheRight);
 closeButton.addEventListener('click', hideSearchInfo);
