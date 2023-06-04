@@ -31,7 +31,7 @@ header {
     border-bottom: 1px solid #dfe0e5;
 }
 
-.relevant-product_top {
+.banner_top {
     background-color: #FFCC00;
     height: 48px;
     position: relative;
@@ -44,34 +44,34 @@ header {
     transition: height 0.3s;
 }
 
-.product-link {
+.banner-link {
     display: block;
     height: 100%;
     margin: 0 50px;
 }
 
-.product-wrapper {
+.banner-content-wrapper {
     height: 100%;
     margin: 0 auto;
     position: relative;
     width: 330px;
 }
 
-.product-wrapper img {
+.banner-content-wrapper img {
     height: 90%;
     margin-right: 10px;
     position: inherit;
     top: 5%;
 }
 
-.product-wrapper span {
+.banner-content-wrapper span {
     font-size: 15px;
     font-weight: 600;
     position: absolute;
     top: 30%;
 }
 
-.relevant-product_top button {
+.banner_top button {
     font-size: 0;
     padding: 12px;
     position: absolute;
@@ -228,6 +228,7 @@ header {
 .with-nested-nav {
     cursor: pointer;
     margin: 0 16px;
+    /* add outline */
 }
 
 .nested-nav-wrapper {

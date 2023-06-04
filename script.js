@@ -1,10 +1,10 @@
 // hide the top yellow bar
-const productButton = document.querySelector('.relevant-product_top button');
+const topBannerButton = document.querySelector('.banner_top button');
 
-const closeRelevantProduct = () => {
-    const relevantProduct = document.querySelector('.relevant-product_top');
+const closeTopBanner = () => {
+    const topBanner = document.querySelector('.banner_top');
     
-    relevantProduct.classList.add('height-zero');
+    topBanner.classList.add('height-zero');
 };
 
 // toggle regions popup
@@ -97,7 +97,7 @@ const closeOnEsc = event => {
     }
 };
 
-productButton.addEventListener('click', closeRelevantProduct);
+topBannerButton.addEventListener('click', closeTopBanner);
 chosenRegionButton.addEventListener('click', showRegionsPopup);
 regionsWrapper.addEventListener('click', hideRegionsPopup);
 searchBar.addEventListener('focus', hideButtonsToTheRight);
