@@ -91,11 +91,9 @@ const closeOnEsc = event => {
     if (event.keyCode === 27) {
         const popups = document.querySelectorAll('.popup');
 
-        popups.forEach(popup => {
-            if (popup.style.display !== 'none') {
-                popup.style.display = 'none';
-            }
-        });
+        popups.forEach(popup => popup.style.display = 'none');
+
+        hideSearchInfo();
     }
 };
 
@@ -103,5 +101,6 @@ productButton.addEventListener('click', closeRelevantProduct);
 chosenRegionButton.addEventListener('click', showRegionsPopup);
 regionsWrapper.addEventListener('click', hideRegionsPopup);
 searchBar.addEventListener('focus', hideButtonsToTheRight);
+searchBar.addEventListener('click', hideButtonsToTheRight);
 closeButton.addEventListener('click', hideSearchInfo);
 window.addEventListener('keydown', closeOnEsc);
