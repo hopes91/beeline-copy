@@ -225,8 +225,20 @@ header {
     font-weight: bold;
 }
 
+.navbar a:hover {
+    opacity: 0.7;
+}
+
 .with-nested-nav {
     margin: 0 16px;
+}
+
+.with-nested-nav > a:hover {
+    color: #f45151;
+}
+
+.with-nested-nav a:hover > svg {
+    fill: #f45151;
 }
 
 .nested-nav-wrapper {
@@ -251,7 +263,6 @@ header {
 .nested-nav li {
     background-color: #fbfbfb;
     border-bottom: 1px solid #dfe0e5;
-    padding: 12px 16px;
     transition: background-color 0.3s;
 }
 
@@ -261,6 +272,11 @@ header {
 
 .nested-nav li:hover {
     background-color: hsla(240, 9%, 77%, 0.2);
+}
+
+.nested-nav a {
+    display: block;
+    padding: 12px 16px;
 }
 
 .navbar_right ul li {
