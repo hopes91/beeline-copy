@@ -237,11 +237,11 @@ header * {
     margin: 0 16px;
 }
 
-.with-nested-nav > a:hover {
+.with-nested-nav:hover > a {
     color: #f45151;
 }
 
-.with-nested-nav a:hover > svg {
+.with-nested-nav:hover > a svg {
     fill: #f45151;
 }
 
