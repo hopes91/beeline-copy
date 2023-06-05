@@ -337,12 +337,24 @@ header * {
 .catalog-button .svg-wrapper {
     display: inline-block;
     height: 24px;
+    position: relative;
     width: 24px;
 }
 
 .catalog-button .svg-wrapper svg {
     font-size: 0;
+    left: 0;
     line-height: 0;
+    position: absolute;
+    transition: opacity 0.3s;
+}
+
+.button-closed {
+    opacity: 1;
+}
+
+.button-opened {
+    opacity: 0;
 }
 
 .catalog-button span {
@@ -491,6 +503,10 @@ header * {
 
 #login-button:focus {
     color: #D9D9D9;
+}
+
+.catalog-info-wrapper {
+    display: none;
 }
 
 .search-info-wrapper {

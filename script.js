@@ -21,6 +21,42 @@ const hideRegionsPopup = event => {
     }
 };
 
+// toggle catalog info
+const catalogButton = document.querySelector('.catalog-button');
+
+const toggleCatalogInfo = () => {
+    const catalogInfo = document.querySelector('.catalog-info-wrapper');
+
+    if (catalogInfo.style.display === 'block') {
+        catalogInfo.style.display = 'none';
+    } else {
+        catalogInfo.style.display = 'block';
+    }
+
+    toggleCatalogButtonSVG(catalogInfo);
+};
+
+const hideCatalogInfo = () => {
+    const catalogInfo = document.querySelector('.catalog-info-wrapper');
+
+    catalogInfo.style.display = 'none';
+
+    toggleCatalogButtonSVG(catalogInfo);
+};
+
+const toggleCatalogButtonSVG = catalogInfo => {
+    const svgClosed = document.querySelector('.catalog-button .button-closed');
+    const svgOpened = document.querySelector('.catalog-button .button-opened');
+
+    if (catalogInfo.style.display === 'block') {
+        svgClosed.style.opacity = '0';
+        svgOpened.style.opacity = '1';
+    } else {
+        svgClosed.style.opacity = '1';
+        svgOpened.style.opacity = '0';
+    }
+};
+
 // toggle search bar's hidden content
 const searchBar = document.getElementById('search-bar');
 
@@ -33,10 +69,9 @@ const hideButtonsToTheRight = () => {
 };
 
 const hideCatalogButton = () => {
-    const catalogButton = document.querySelector('.catalog-button');
-
     catalogButton.style.display = 'none';
 
+    hideCatalogInfo();
     showHiddenButtons();
 };
 
@@ -73,8 +108,6 @@ const hideHiddenButtons = () => {
 };
 
 const showCatalogButton = () => {
-    const catalogButton = document.querySelector('.catalog-button');
-
     catalogButton.style.display = 'inline-block';
 
     showButtonsToTheRight();
@@ -94,13 +127,19 @@ const closeOnEsc = event => {
         popups.forEach(popup => popup.style.display = 'none');
 
         hideSearchInfo();
+        hideCatalogInfo();
     }
 };
 
 topBannerButton.addEventListener('click', closeTopBanner);
+
 chosenRegionButton.addEventListener('click', showRegionsPopup);
 regionsWrapper.addEventListener('click', hideRegionsPopup);
+
+catalogButton.addEventListener('click', toggleCatalogInfo);
+
 searchBar.addEventListener('focus', hideButtonsToTheRight);
 searchBar.addEventListener('click', hideButtonsToTheRight);
 closeButton.addEventListener('click', hideSearchInfo);
+
 window.addEventListener('keydown', closeOnEsc);
