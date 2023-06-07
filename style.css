@@ -49,7 +49,7 @@ header > .content-wrapper {
     position: relative;
     overflow: hidden;
     width: 100%;
-    z-index: 10;
+    z-index: 11;
 }
 
 .height-zero {
@@ -98,7 +98,7 @@ header > .content-wrapper {
     max-width: 1310px;
     position: relative;
     width: 100%;
-    z-index: 10;
+    z-index: 11;
 }
 
 .bar_top {
@@ -138,7 +138,7 @@ header > .content-wrapper {
     position: fixed;
     top: 0;
     width: 100vw;
-    z-index: 1000;
+    z-index: 100;
 }
 
 .regions {
@@ -260,7 +260,7 @@ header > .content-wrapper {
     display: none;
     padding-top: 12px;
     position: absolute;
-    z-index: 100;
+    z-index: 20;
 }
 
 .with-nested-nav:hover > .nested-nav-wrapper {
