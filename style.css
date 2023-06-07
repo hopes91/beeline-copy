@@ -27,19 +27,27 @@ li {
 }
 
 header {
-    border-bottom: 1px solid #dfe0e5;
+    position: relative;
 }
 
 header * {
     outline-color: #FFCC00;
 }
 
+header > .content-wrapper {
+    background-color: #ffffff;
+    border-bottom: 1px solid #dfe0e5;
+}
+
 .banner_top {
     background-color: #FFCC00;
+    box-sizing: border-box;
     height: 48px;
+    padding: 0 16px;
     position: relative;
     overflow: hidden;
     width: 100%;
+    z-index: 10;
 }
 
 .height-zero {
@@ -53,21 +61,21 @@ header * {
     margin: 0 50px;
 }
 
-.banner-content-wrapper {
+.banner_top .content-wrapper {
     height: 100%;
     margin: 0 auto;
     position: relative;
     width: 330px;
 }
 
-.banner-content-wrapper img {
+.banner_top .content-wrapper img {
     height: 90%;
     margin-right: 10px;
     position: inherit;
     top: 5%;
 }
 
-.banner-content-wrapper span {
+.banner_top .content-wrapper span {
     font-size: 15px;
     font-weight: 600;
     position: absolute;
@@ -82,18 +90,19 @@ header * {
     top: 0;
 }
 
+.navbar_top {
+    background-color: #ffffff;
+    margin: 0 auto;
+    max-width: 1310px;
+    position: relative;
+    width: 100%;
+    z-index: 10;
+}
+
 .bar_top {
     display: flex;
     justify-content: space-between;
-    padding: 16px 0 5px;
-}
-
-.navbar_top {
-    box-sizing: border-box;
-    margin: 0 auto;
-    max-width: 1310px;
-    padding: 0 20px;
-    width: 100%;
+    padding: 16px 20px 5px 20px;
 }
 
 .chosen-region {
@@ -295,7 +304,7 @@ header * {
     align-content: center;
     display: flex;
     justify-content: space-between;
-    padding: 16px 0;
+    padding: 16px 20px;
 }
 
 .left {
