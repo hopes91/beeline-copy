@@ -551,7 +551,7 @@ header > .content-wrapper {
     padding: 32px 24px 32px 0;
 }
 
-.info-nav > div a {
+.info-nav > div > a {
     display: inline-block;
     font-weight: bold;
     padding-bottom: 6px;
