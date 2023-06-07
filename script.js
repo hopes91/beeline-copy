@@ -64,8 +64,10 @@ const changeCatalogBackColor = catalogInfo => {
 
     if (catalogInfo.style.display === 'block') {
         catalogBackground.style.display = 'block';
+        catalogBackground.style.opacity = '0.3';
     } else {
         catalogBackground.style.display = 'none';
+        catalogBackground.style.opacity = '0';
     }
 };
 
