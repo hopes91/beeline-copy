@@ -34,6 +34,7 @@ const toggleCatalogInfo = () => {
     }
 
     toggleCatalogButtonSVG(catalogInfo);
+    changeCatalogBackColor(catalogInfo);
 };
 
 const hideCatalogInfo = () => {
@@ -42,6 +43,7 @@ const hideCatalogInfo = () => {
     catalogInfo.style.display = 'none';
 
     toggleCatalogButtonSVG(catalogInfo);
+    changeCatalogBackColor(catalogInfo);
 };
 
 const toggleCatalogButtonSVG = catalogInfo => {
@@ -54,6 +56,16 @@ const toggleCatalogButtonSVG = catalogInfo => {
     } else {
         svgClosed.style.opacity = '1';
         svgOpened.style.opacity = '0';
+    }
+};
+
+const changeCatalogBackColor = catalogInfo => {
+    const catalogBackground = document.querySelector('.catalog-info-background');
+
+    if (catalogInfo.style.display === 'block') {
+        catalogBackground.style.display = 'block';
+    } else {
+        catalogBackground.style.display = 'none';
     }
 };
 
