@@ -547,8 +547,11 @@ header > .content-wrapper {
 
 .info-nav {
     border-right: 1px solid #dfe0e5;
+    height: 70vh;
     min-width: 190px;
+    overflow-x: auto;
     padding: 32px 24px 32px 0;
+    scrollbar-width: none;
 }
 
 .info-nav::-webkit-scrollbar {
@@ -559,6 +562,15 @@ header > .content-wrapper {
     display: inline-block;
     font-weight: bold;
     padding-bottom: 6px;
+    transition: opacity 0.3s;
+}
+
+.info-nav > div > a:hover {
+    opacity: 0.7;
+}
+
+#sale-link {
+    color: #f45151;
 }
 
 .info-nav ul {
@@ -567,8 +579,21 @@ header > .content-wrapper {
 }
 
 .info-nav li {
+    padding: 2px 0;
+}
+
+.info-nav button {
+    border: 1px solid #ffffff;
+    display: block;
     font-size: 15px;
-    padding: 6px 16px 6px 0;
+    padding: 2px 6px;
+    text-align: left;
+    width: 100%;
+}
+
+.chosen-section {
+    background-color: rgba(223, 224, 229, 0.6);
+    border-radius: 8px;
 }
 
 .info-more {

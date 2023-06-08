@@ -71,6 +71,15 @@ const changeCatalogBackColor = catalogInfo => {
     }
 };
 
+// highlight catalog nav links
+const catalogSectionLinks = document.querySelectorAll('.info-nav button');
+
+const highlightSectionLink = event => {
+    catalogSectionLinks.forEach(link => link.classList.remove('chosen-section'));
+
+    event.currentTarget.classList.add('chosen-section');
+};
+
 // toggle search bar's hidden content
 const searchBar = document.getElementById('search-bar');
 
@@ -151,6 +160,7 @@ chosenRegionButton.addEventListener('click', showRegionsPopup);
 regionsWrapper.addEventListener('click', hideRegionsPopup);
 
 catalogButton.addEventListener('click', toggleCatalogInfo);
+catalogSectionLinks.forEach(link => link.addEventListener('mouseover', highlightSectionLink));
 
 searchBar.addEventListener('focus', hideButtonsToTheRight);
 searchBar.addEventListener('click', hideButtonsToTheRight);
