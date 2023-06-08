@@ -551,6 +551,10 @@ header > .content-wrapper {
     padding: 32px 24px 32px 0;
 }
 
+.info-nav::-webkit-scrollbar {
+    display: none;
+}
+
 .info-nav > div > a {
     display: inline-block;
     font-weight: bold;
@@ -568,7 +572,14 @@ header > .content-wrapper {
 }
 
 .info-more {
+    height: 70vh;
+    overflow-x: auto;
     padding-bottom: 24px;
+    scrollbar-width: none;
+}
+
+.info-more::-webkit-scrollbar {
+    display: none;
 }
 
 .info-more div {
