@@ -605,6 +605,7 @@ header * {
     overflow-x: auto;
     padding-bottom: 24px;
     scrollbar-width: none;
+    width: 100%;
 }
 
 .info-more::-webkit-scrollbar {
@@ -644,6 +645,63 @@ header * {
 
 .more-nav img:hover,
 .more-nav a:hover {
+    opacity: 0.7;
+}
+
+.more-content-wrapper {
+    padding: 0 24px;
+}
+
+.more-content {
+    display: none;
+}
+
+.more-content:nth-child(2) {
+    display: block;
+}
+
+.more-content .title {
+    display: block;
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 24px;
+}
+
+.more-content .content {
+    display: flex;
+}
+
+.more-content .section {
+    margin-bottom: 32px;
+    max-width: 290px;
+    width: 100%;
+}
+
+.more-content .section span {
+    cursor: default;
+    display: block;
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 16px;
+}
+
+.more-content .section ul {
+    margin: 0;
+    padding: 0;
+}
+
+.more-content .section li {
+    line-height: 1.3;
+    padding-bottom: 8px;
+}
+
+.more-content .section a {
+    font-size: 14px;
+    transition: opacity 0.3s;
+    white-space: nowrap;
+}
+
+.more-content .section a:hover {
     opacity: 0.7;
 }
 
