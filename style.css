@@ -34,9 +34,14 @@ header * {
     outline-color: #FFCC00;
 }
 
-header > .content-wrapper {
+.header-content {
     background-color: #ffffff;
     border-bottom: 1px solid #dfe0e5;
+    /* height: 161px;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%; */
     position: relative;
     z-index: 10;
 }
@@ -63,21 +68,21 @@ header > .content-wrapper {
     margin: 0 50px;
 }
 
-.banner_top .content-wrapper {
+.banner-content {
     height: 100%;
     margin: 0 auto;
     position: relative;
     width: 330px;
 }
 
-.banner_top .content-wrapper img {
+.banner-content img {
     height: 90%;
     margin-right: 10px;
     position: inherit;
     top: 5%;
 }
 
-.banner_top .content-wrapper span {
+.banner-content span {
     font-size: 15px;
     font-weight: 600;
     position: absolute;
