@@ -125,14 +125,14 @@ header * {
 }
 
 .chosen-region svg,
-.chosen-region span {
+#chosen-region {
     display: inline-block;
     vertical-align: middle;
 }
 
-.chosen-region span {
-    font-weight: bold;
-    letter-spacing: 0.5px;
+#chosen-region {
+    font-size: 14px;
+    font-weight: 500;
 }
 
 .regions-wrapper {
@@ -198,7 +198,6 @@ header * {
     border-radius: 12px;
     box-sizing: border-box;
     font-size: 14px;
-    letter-spacing: 0.5px;
     outline: #dfe0e5;
     padding: 12px;
     width: 100%;
@@ -242,7 +241,7 @@ header * {
 
 .navbar li {
     font-size: 14px;
-    font-weight: bold;
+    font-weight: 500;
 }
 
 .navbar a:hover {
@@ -373,8 +372,8 @@ header * {
 }
 
 .catalog-button span {
-    font-weight: bold;
-    letter-spacing: 0.6px;
+    font-size: 14px;
+    font-weight: 600;
     padding-left: 6px;
 }
 
@@ -423,8 +422,8 @@ header * {
 .hidden-buttons button {
     border-radius: 8px;
     color: #191c22;
-    font-weight: bold;
-    letter-spacing: 0.5px;
+    font-size: 14px;
+    font-weight: 600;
     padding: 8px 24px;
 }
 
@@ -491,7 +490,7 @@ header * {
 
 .cart-link-wrapper a {
     display: block;
-    font-size: 13px;
+    font-size: 12px;
     text-align: center;
 }
 
@@ -511,8 +510,7 @@ header * {
     border: 1px solid #191c22;
     border-radius: 8px;
     font-size: 14px;
-    font-weight: bold;
-    letter-spacing: 0.5px;
+    font-weight: 600;
     padding: 9px 24px;
 }
 
@@ -565,7 +563,8 @@ header * {
 
 .info-nav > div > a {
     display: inline-block;
-    font-weight: bold;
+    font-size: 16px;
+    font-weight: 600;
     padding-bottom: 6px;
     transition: opacity 0.3s;
 }
@@ -590,7 +589,7 @@ header * {
 .info-nav button {
     border: 1px solid #ffffff;
     display: block;
-    font-size: 15px;
+    font-size: 14px;
     padding: 2px 6px;
     text-align: left;
     width: 100%;
@@ -640,7 +639,7 @@ header * {
 }
 
 .more-nav a {
-    letter-spacing: 0.5px;
+    font-size: 16px;
 }
 
 .more-nav img:hover,
