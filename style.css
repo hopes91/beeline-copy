@@ -607,8 +607,40 @@ header > .content-wrapper {
     display: none;
 }
 
-.info-more div {
+.more-nav {
     padding: 32px 24px;
+}
+
+.more-nav ul {
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.more-nav li {
+    align-items: center;
+    display: flex;
+    margin-right: 32px;
+}
+
+.more-nav li:last-child {
+    margin-right: 0;
+}
+
+.more-nav img {
+    cursor: pointer;
+    height: 20px;
+    margin-right: 6px;
+    width: 20px;
+}
+
+.more-nav a {
+    letter-spacing: 0.5px;
+}
+
+.more-nav img:hover,
+.more-nav a:hover {
+    opacity: 0.7;
 }
 
 .catalog-info-background {
