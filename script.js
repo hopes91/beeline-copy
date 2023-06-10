@@ -16,7 +16,7 @@ const showRegionsPopup = () => {
 };
 
 const hideRegionsPopup = event => {
-    if (event.currentTarget.classList.contains('close')) {
+    if (event.target.classList.contains('close')) {
         regionsWrapper.style.display = 'none';
     }
 };

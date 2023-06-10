@@ -158,6 +158,7 @@ header * {
     position: absolute;
     top: 10%;
     width: 90%;
+    z-index: 101;
 }
 
 @keyframes slide-down {
@@ -178,7 +179,7 @@ header * {
     margin-bottom: 24px;
 }
 
-.regions .header button {
+.regions .close {
     font-size: 0;
     padding: 12px;
     position: absolute;
@@ -188,7 +189,7 @@ header * {
     top: 32px;
 }
 
-.regions .header button:hover {
+.regions .close:hover {
     stroke: #f45151;
 }
 
