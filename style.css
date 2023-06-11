@@ -320,7 +320,9 @@ header * {
     padding: 16px 20px;
 }
 
-.left {
+.left,
+.center,
+.right {
     display: flex;
 }
 
