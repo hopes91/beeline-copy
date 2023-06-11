@@ -555,7 +555,7 @@ header * {
     padding: 0 20px;
 }
 
-.info-nav {
+.small-navbar-wrapper {
     border-right: 1px solid #dfe0e5;
     height: 75vh;
     min-width: 190px;
@@ -564,11 +564,20 @@ header * {
     scrollbar-width: none;
 }
 
-.info-nav::-webkit-scrollbar {
+.small-navbar-wrapper::-webkit-scrollbar {
     display: none;
 }
 
-.info-nav > div > a {
+.small-navbar {
+    margin: 0 0 16px 0;
+    padding: 0;
+}
+
+.small-navbar li {
+    padding: 2px 0;
+}
+
+.small-navbar .title {
     display: inline-block;
     font-size: 16px;
     font-weight: 600;
@@ -576,20 +585,11 @@ header * {
     transition: opacity 0.3s;
 }
 
-.info-nav > div > a:hover {
+.small-navbar .title:hover {
     opacity: 0.7;
 }
 
-.info-nav ul {
-    margin: 0 0 16px 0;
-    padding: 0;
-}
-
-.info-nav li {
-    padding: 2px 0;
-}
-
-.info-nav button {
+.small-navbar button {
     border: 1px solid #ffffff;
     display: block;
     font-size: 14px;
@@ -603,7 +603,7 @@ header * {
     border-radius: 8px;
 }
 
-.info-more {
+.big-navbar-wrapper {
     height: 80vh;
     overflow-x: auto;
     padding-bottom: 32px;
@@ -611,47 +611,43 @@ header * {
     width: 100%;
 }
 
-.info-more::-webkit-scrollbar {
+.big-navbar-wrapper::-webkit-scrollbar {
     display: none;
 }
 
-.more-nav {
+.big-navbar-wrapper .navbar_top {
+    display: flex;
+    margin: 0;
     padding: 32px 24px;
 }
 
-.more-nav ul {
-    display: flex;
-    margin: 0;
-    padding: 0;
-}
-
-.more-nav li {
+.big-navbar-wrapper .navbar_top li {
     align-items: center;
     display: flex;
     margin-right: 32px;
 }
 
-.more-nav li:last-child {
+.big-navbar-wrapper .navbar_top li:last-child {
     margin-right: 0;
 }
 
-.more-nav img {
+.big-navbar-wrapper .navbar_top img {
     cursor: pointer;
     height: 20px;
     margin-right: 6px;
     width: 20px;
 }
 
-.more-nav a {
+.big-navbar-wrapper .navbar_top a {
     font-size: 16px;
 }
 
-.more-nav img:hover,
-.more-nav a:hover {
+.big-navbar-wrapper .navbar_top img:hover,
+.big-navbar-wrapper .navbar_top a:hover {
     opacity: 0.7;
 }
 
-.more-content {
+.big-navbar {
     padding-left: 24px;
 }
 

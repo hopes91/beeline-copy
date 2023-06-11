@@ -72,7 +72,7 @@ const changeCatalogBackColor = catalogInfo => {
 };
 
 // highlight catalog nav links
-const catalogSectionLinks = document.querySelectorAll('.info-nav button');
+const catalogSectionLinks = document.querySelectorAll('.small-navbar button');
 
 const highlightSectionLink = event => {
     catalogSectionLinks.forEach(link => link.classList.remove('chosen-section'));
