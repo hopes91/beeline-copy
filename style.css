@@ -372,14 +372,6 @@ header * {
     transition: opacity 0.3s;
 }
 
-.button-closed {
-    opacity: 1;
-}
-
-.button-opened {
-    opacity: 0;
-}
-
 .catalog-button span {
     font-size: 14px;
     font-weight: 600;
@@ -391,8 +383,15 @@ header * {
     vertical-align: middle;
 }
 
+.button-closed {
+    opacity: 1;
+}
+
+.button-opened {
+    opacity: 0;
+}
+
 .center {
-    display: flex;
     position: relative;
     width: 100%;
 }
@@ -469,7 +468,6 @@ header * {
 }
 
 .right {
-    display: flex;
     margin-left: 24px;
 }
 
