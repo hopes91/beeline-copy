@@ -1,5 +1,5 @@
 // hide the top yellow bar
-const topBannerButton = document.querySelector('.banner_top button');
+const topBannerButton = document.querySelector('.banner_top .banner-close');
 
 const closeTopBanner = () => {
     const topBanner = document.querySelector('.banner_top');

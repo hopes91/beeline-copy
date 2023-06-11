@@ -93,7 +93,7 @@ header * {
     top: 30%;
 }
 
-.banner_top button {
+.banner_top .banner-close {
     font-size: 0;
     padding: 12px;
     position: absolute;
