@@ -8,7 +8,7 @@ const closeTopBanner = () => {
 };
 
 // toggle regions popup
-const chosenRegionButton = document.querySelector('.chosen-region button');
+const chosenRegionButton = document.querySelector('.chosen-region');
 const regionsWrapper = document.querySelector('.regions-wrapper');
 
 const showRegionsPopup = () => {
