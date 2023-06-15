@@ -558,7 +558,7 @@ header * {
 .small-navbar-wrapper {
     border-right: 1px solid #dfe0e5;
     height: 75vh;
-    min-width: 190px;
+    min-width: 160px;
     overflow-x: auto;
     padding: 32px 24px 32px 0;
     scrollbar-width: none;
@@ -593,14 +593,14 @@ header * {
     border: 1px solid #ffffff;
     display: block;
     font-size: 14px;
-    padding: 2px 6px;
+    padding: 4px 8px;
     text-align: left;
     width: 100%;
 }
 
 .chosen-section {
-    background-color: rgba(223, 224, 229, 0.6);
-    border-radius: 8px;
+    background-color: rgba(223, 224, 229, 0.5);
+    border-radius: 10px;
 }
 
 .big-navbar-wrapper {
@@ -655,11 +655,15 @@ header * {
     display: none;
 }
 
-.content-block:nth-child(1) {
+/* .content-block.initial {
+    display: block;
+} */
+
+.content-block:nth-child(5) {
     display: block;
 }
 
-.content-block .title {
+.content-block > .title {
     display: block;
     font-size: 20px;
     font-weight: 600;
@@ -668,19 +672,21 @@ header * {
 
 .content-block .content {
     display: flex;
+    flex-wrap: wrap;
+}
+
+.columns-wrapper {
+    display: flex;
+    margin: 0 auto 24px 0;
 }
 
 .two-columns {
     display: flex;
-    width: 660px;
+    width: 580px;
 }
 
 .two-columns .column {
     width: 50%;
-}
-
-.content > .column {
-    width: 200px;
 }
 
 .column .section {
@@ -688,7 +694,7 @@ header * {
     width: 100%;
 }
 
-.section .subtitle {
+.column .subtitle {
     cursor: default;
     display: block;
     font-size: 16px;
@@ -696,24 +702,78 @@ header * {
     margin-bottom: 16px;
 }
 
-.column .section ul {
+.column ul {
     margin: 0;
     padding: 0;
 }
 
-.column .section li {
+.column li {
     line-height: 1.3;
     padding-bottom: 8px;
 }
 
-.column .section a {
+.column a {
     font-size: 14px;
+    letter-spacing: -0.3px;
     transition: opacity 0.3s;
     white-space: nowrap;
 }
 
-.column .section a:hover {
+.column a:hover {
     opacity: 0.7;
+}
+
+.card-wrapper {
+    margin-bottom: 32px;
+}
+
+.card-wrapper .card {
+    border: 1px solid #dfe0e5;
+    border-radius: 12px;
+    box-sizing: border-box;
+    display: block;
+    padding: 24px;
+    max-height: 410px;
+    width: 410px;
+}
+
+.content-block:nth-child(4) .card {
+    background-color: #ffffff;
+}
+
+.content-block:nth-child(5) .card {
+    background-color: #BF9FFF;
+}
+
+.card .title {
+    display: block;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 1.1;
+    margin-bottom: 8px;
+}
+
+.card .subtitle {
+    display: block;
+    line-height: 1.3;
+}
+
+.card div {
+    position: relative;
+}
+
+.card button {
+    background-color: #ffe632;
+    border: 1px solid #ffe632;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    margin-right: 40px;
+    padding: 10px 18px;
+}
+
+.card img {
+    width: 200px;
 }
 
 .catalog-info-background {
