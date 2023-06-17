@@ -721,7 +721,6 @@ header * {
 
 .card-wrapper {
     margin-bottom: 32px;
-    position: relative;
 }
 
 .card-wrapper .card {
@@ -732,6 +731,7 @@ header * {
     display: block;
     height: 400px;
     padding: 24px;
+    position: relative;
     width: 400px;
 }
 
@@ -764,6 +764,9 @@ header * {
 }
 
 .card.bam img {
+    bottom: 40px;
+    right: 8px;
+}
     bottom: 48px;
     right: 16px;
 }
