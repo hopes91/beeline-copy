@@ -1,13 +1,13 @@
-// hide the top yellow bar
+// top yellow bar
 const topBannerButton = document.querySelector('.banner_top .banner-close');
 
-const closeTopBanner = () => {
+const hideTopBanner = () => {
     const topBanner = document.querySelector('.banner_top');
     
     topBanner.classList.add('height-zero');
 };
 
-// toggle regions popup
+// regions popup
 const chosenRegionButton = document.querySelector('.chosen-region');
 const regionsWrapper = document.querySelector('.regions-wrapper');
 
@@ -21,7 +21,7 @@ const hideRegionsPopup = event => {
     }
 };
 
-// toggle catalog info
+// catalog content
 const catalogButton = document.querySelector('.catalog-button');
 
 const toggleCatalogInfo = () => {
@@ -29,6 +29,9 @@ const toggleCatalogInfo = () => {
 
     if (catalogInfo.style.display === 'block') {
         catalogInfo.style.display = 'none';
+
+        hideCatalogBlocks();
+        displayInitialCatalogBlock();
     } else {
         catalogInfo.style.display = 'block';
     }
@@ -44,6 +47,14 @@ const hideCatalogInfo = () => {
 
     toggleCatalogButtonSVG(catalogInfo);
     changeCatalogBackColor(catalogInfo);
+    hideCatalogBlocks();
+    displayInitialCatalogBlock();
+};
+
+const displayInitialCatalogBlock = () => {
+    const initialBlock = document.querySelector('.content-block.initial');
+
+    initialBlock.style.display = 'block';
 };
 
 const toggleCatalogButtonSVG = catalogInfo => {
@@ -71,16 +82,41 @@ const changeCatalogBackColor = catalogInfo => {
     }
 };
 
-// highlight catalog nav links
-const catalogSectionLinks = document.querySelectorAll('.small-navbar button');
+const catalogButtons = document.querySelectorAll('.small-navbar button');
 
-const highlightSectionLink = event => {
-    catalogSectionLinks.forEach(link => link.classList.remove('chosen-section'));
+const addHighlightCatalogNavbarButton = event => {
+    removeHighlightCatalogNavbarButton();
 
     event.currentTarget.classList.add('chosen-section');
+
+    showCatalogBlock(event.currentTarget.innerText);
 };
 
-// toggle search bar's hidden content
+const removeHighlightCatalogNavbarButton = () => {
+    catalogButtons.forEach(button => button.classList.remove('chosen-section'));
+};
+
+const showCatalogBlock = currentButton => {
+    hideCatalogBlocks();
+
+    const catalogBlocks = document.querySelectorAll('.big-navbar .content-block');
+
+    for (let block of catalogBlocks) {
+        if (block.childNodes[1].innerText === currentButton) {
+            block.style.display = 'block';
+            break;
+        }
+    }
+    console.log(catalogBlocks);
+};
+
+const hideCatalogBlocks = () => {
+    const catalogBlocks = document.querySelectorAll('.big-navbar .content-block');
+
+    catalogBlocks.forEach(block => block.style.display = 'none');
+};
+
+// search bar content
 const searchBar = document.getElementById('search-bar');
 
 const hideButtonsToTheRight = () => {
@@ -112,7 +148,7 @@ const showSearchInfo = () => {
     searchInfo.style.display = 'block';
 };
 
-const closeButton = document.getElementById('close-search');
+const closeSearchBarButton = document.getElementById('close-search');
 
 const hideSearchInfo = () => {
     const searchInfo = document.querySelector('.search-info-wrapper');
@@ -154,16 +190,16 @@ const closeOnEsc = event => {
     }
 };
 
-topBannerButton.addEventListener('click', closeTopBanner);
+topBannerButton.addEventListener('click', hideTopBanner);
 
 chosenRegionButton.addEventListener('click', showRegionsPopup);
 regionsWrapper.addEventListener('click', hideRegionsPopup);
 
 catalogButton.addEventListener('click', toggleCatalogInfo);
-catalogSectionLinks.forEach(link => link.addEventListener('mouseover', highlightSectionLink));
+catalogButtons.forEach(button => button.addEventListener('mouseover', addHighlightCatalogNavbarButton));
 
 searchBar.addEventListener('focus', hideButtonsToTheRight);
 searchBar.addEventListener('click', hideButtonsToTheRight);
-closeButton.addEventListener('click', hideSearchInfo);
+closeSearchBarButton.addEventListener('click', hideSearchInfo);
 
 window.addEventListener('keydown', closeOnEsc);
