@@ -58,8 +58,8 @@ const displayInitialCatalogBlock = () => {
 };
 
 const toggleCatalogButtonSVG = catalogInfo => {
-    const svgClosed = document.querySelector('.catalog-button .button-closed');
-    const svgOpened = document.querySelector('.catalog-button .button-opened');
+    const svgClosed = document.querySelector('.catalog-button svg.closed');
+    const svgOpened = document.querySelector('.catalog-button svg.opened');
 
     if (catalogInfo.style.display === 'block') {
         svgClosed.style.opacity = '0';
