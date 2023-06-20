@@ -773,7 +773,7 @@ header * {
 }
 
 .cards-wrapper button {
-    border: 1px solid #000000;
+    border: 1px solid #191c22;
     border-radius: 16px;
     bottom: 24px;
     left: 24px;
@@ -925,13 +925,117 @@ header * {
 }
 
 .card-wrapper .card.sg button {
-    background-color: #000000;
-    border-color: #000000;
+    background-color: #191c22;
+    border-color: #191c22;
     color: #ffffff;
 }
 
+.login-wrapper {
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: none;
+    height: 100vh;
+    justify-content: center;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    z-index: 100;
+}
+
+.login {
+    animation: increase-opacity 0.5s forwards;
+    background-color: #ffffff;
+    border: 1px solid #dfe0e5;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px hsla(0, 0%, 40%, 0.08);
+    height: 450px;
+    opacity: 0;
+    width: 600px;
+    z-index: 101;
+}
+
+@keyframes increase-opacity {
+    to {
+        opacity: 1;
+    }
+}
+
+.login .header {
+    padding: 96px 48px 24px 48px;
+    position: relative;
+}
+
+.login .header span {
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.login button.close {
+    font-size: 0;
+    padding: 12px;
+    position: absolute;
+    right: 32px;
+    stroke: #191c22;
+    stroke-width: 1.5px;
+    top: 32px;
+}
+
+.login button.close:hover {
+    stroke: #f45151;
+}
+
+.login .content {
+    padding: 0 48px 96px 48px;
+}
+
+.login-options-wrapper {
+    display: flex;
+}
+
+.login-option {
+    background-color: #ffffff;
+    color: #191c22;
+    transition: background-color 0.3s;
+}
+
+.login-option:hover {
+    background-color: hsla(0, 0%, 40%, 0.08);
+}
+
+.login-option path {
+    fill: #8E8E9F;
+}
+
+.chosen-option {
+    background-color: #191c22;
+    color: #ffffff;
+    cursor: default;
+}
+
+#mobile-id,
+#sms,
+#permanent-password {
+    border: 1px solid #dfe0e5;
+    border-radius: 8px;
+    font-size: 16px;
+    padding: 6px 16px;
+    white-space: nowrap;
+}
+
+#mobile-id,
+#sms {
+    margin-right: 8px;
+}
+
+#mobile-id svg,
+#mobile-id span {
+    display: inline-block;
+    vertical-align: middle;
+}
+
 .catalog-info-background {
-    background-color: #000000;
+    background-color: #191c22;
     bottom: 0;
     display: none;
     height: 100%;
@@ -951,9 +1055,5 @@ main {
 }
 
 .search-info-wrapper {
-    display: none;
-}
-
-.login-wrapper {
     display: none;
 }
