@@ -8,6 +8,7 @@ body {
 a {
     border: none;
     color: #191c22;
+    letter-spacing: -0.2px;
     text-decoration: none;
 }
 
@@ -20,10 +21,17 @@ button {
     border: none;
     cursor: pointer;
     font-family: 'Jost', sans-serif;
+    letter-spacing: -0.2px;
 }
 
 li {
+    letter-spacing: -0.2px;
     list-style-type: none;
+}
+
+span,
+p {
+    letter-spacing: -0.2px;
 }
 
 header {
@@ -780,6 +788,7 @@ header * {
 .two-columns {
     display: flex;
     width: 580px;
+    z-index: 1;
 }
 
 .two-columns .column {
@@ -811,7 +820,6 @@ header * {
 
 .column a {
     font-size: 14px;
-    letter-spacing: -0.3px;
     transition: opacity 0.3s;
     white-space: nowrap;
 }
