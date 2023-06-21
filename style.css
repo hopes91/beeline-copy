@@ -24,6 +24,10 @@ button {
     letter-spacing: -0.2px;
 }
 
+input {
+    font-family: 'Jost', sans-serif;
+}
+
 li {
     letter-spacing: -0.2px;
     list-style-type: none;
@@ -417,17 +421,17 @@ header * {
     height: 20px;
     left: 14px;
     position: absolute;
-    top: 20%;
+    top: 25%;
     width: 20px;
 }
 
 #search-bar {
     background-color: #fbfbfb;
     border: 1px solid #dfe0e5;
-    border-radius: 12px;
+    border-radius: 8px;
     box-sizing: border-box;
-    font-size: 12px;
-    padding: 12px 40px;
+    font-size: 14px;
+    padding: 10px 40px;
     width: 100%;
 }
 
@@ -949,9 +953,9 @@ header * {
     border: 1px solid #dfe0e5;
     border-radius: 12px;
     box-shadow: 0 8px 24px hsla(0, 0%, 40%, 0.08);
-    height: 450px;
+    min-height: 455px;
     opacity: 0;
-    width: 600px;
+    width: 555px;
     z-index: 101;
 }
 
@@ -1013,9 +1017,9 @@ header * {
     cursor: default;
 }
 
-#mobile-id,
-#sms,
-#permanent-password {
+#mobile-id-option,
+#sms-option,
+#password-option {
     border: 1px solid #dfe0e5;
     border-radius: 8px;
     font-size: 16px;
@@ -1023,15 +1027,64 @@ header * {
     white-space: nowrap;
 }
 
-#mobile-id,
-#sms {
+#mobile-id-option,
+#sms-option {
     margin-right: 8px;
 }
 
-#mobile-id svg,
-#mobile-id span {
+#mobile-id-option svg,
+#mobile-id-option span {
     display: inline-block;
     vertical-align: middle;
+}
+
+.login-forms-wrapper {
+    margin-top: 24px;
+}
+
+.login-forms-wrapper form {
+    flex-direction: column;
+}
+
+.chosen-form {
+    display: flex;
+}
+
+.login-form {
+    display: none;
+}
+
+.login-forms-wrapper input {
+    background-color: #fbfbfb;
+    border: 1px solid #dfe0e5;
+    border-radius: 12px;
+    box-sizing: border-box;
+    font-size: 16px;
+    margin: 8px 0;
+    padding: 12px;
+    outline-color: #191c22;
+    width: 100%;
+}
+
+.login-forms-wrapper button {
+    background-color: #ffe632;
+    border: 1px solid #ffe632;
+    border-radius: 12px;
+    box-sizing: border-box;
+    color: #191c22;
+    font-size: 16px;
+    font-weight: 600;
+    margin-top: 32px;
+    padding: 10px 24px;
+    transition: background-color 0.3s, border-color 0.3s, color 0.3s;
+    width: 180px;
+}
+
+.login-forms-wrapper button:disabled {
+    background-color: #dfe0e5;
+    border-color: #dfe0e5;
+    color: #bebec9;
+    cursor: unset;
 }
 
 .catalog-info-background {
