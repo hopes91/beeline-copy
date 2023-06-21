@@ -178,15 +178,29 @@ const showButtonsToTheRight = () => {
     buttonsToTheRight.style.display = 'flex';
 };
 
+// login popup
+const loginWrapper = document.querySelector('.login-wrapper');
+const loginButton = document.getElementById('login-button');
+
+const showLoginPopup = () => {
+    loginWrapper.style.display = 'flex';
+};
+
+const hideLoginPopup = event => {
+    if (event.target.classList.contains('close')) {
+        loginWrapper.style.display = 'none';
+
+    }
+};
 // close popups or additional info blocks
 const closeOnEsc = event => {
     if (event.keyCode === 27) {
         const popups = document.querySelectorAll('.popup');
 
         popups.forEach(popup => popup.style.display = 'none');
-
-        hideSearchInfo();
+        
         hideCatalogInfo();
+        hideSearchInfo();
     }
 };
 
@@ -201,5 +215,8 @@ catalogButtons.forEach(button => button.addEventListener('mouseover', addHighlig
 searchBar.addEventListener('focus', hideButtonsToTheRight);
 searchBar.addEventListener('click', hideButtonsToTheRight);
 closeSearchBarButton.addEventListener('click', hideSearchInfo);
+
+loginButton.addEventListener('click', showLoginPopup);
+loginWrapper.addEventListener('click', hideLoginPopup);
 
 window.addEventListener('keydown', closeOnEsc);
