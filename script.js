@@ -218,10 +218,8 @@ const closeOnEsc = event => {
         const popups = document.querySelectorAll('.popup');
 
         popups.forEach(popup => popup.style.display = 'none');
-        
         hideCatalogInfo();
         hideSearchInfo();
-
         setInitialLoginOption();
     }
 };
