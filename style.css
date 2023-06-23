@@ -1089,6 +1089,19 @@ header * {
     width: 100%;
 }
 
+.password-recover {
+    font-size: 16px;
+    font-weight: 600;
+    margin-top: 24px;
+    opacity: 1;
+    transition: opacity 0.3s;
+    width: 150px;
+}
+
+.password-recover:hover {
+    opacity: 0.7;
+}
+
 .login-forms-wrapper button {
     background-color: #ffe632;
     border: 1px solid #ffe632;
