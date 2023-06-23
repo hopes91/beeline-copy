@@ -190,8 +190,28 @@ const hideLoginPopup = event => {
     if (event.target.classList.contains('close')) {
         loginWrapper.style.display = 'none';
 
+        setInitialLoginOption();
     }
 };
+
+const loginOptions = document.querySelectorAll('.login-options-wrapper button');
+
+const changeLoginOption = event => {
+    loginOptions.forEach(option => option.className = 'login-option');
+
+    if (event.target.className === 'login-option') {
+        event.target.className = 'chosen-option';
+    } else {
+        event.currentTarget.className = 'chosen-option';
+    }
+};
+
+const setInitialLoginOption = () => {
+    loginOptions[0].className = 'chosen-option';
+    loginOptions[1].className = 'login-option';
+    loginOptions[2].className = 'login-option';
+};
+
 // close popups or additional info blocks
 const closeOnEsc = event => {
     if (event.keyCode === 27) {
@@ -201,6 +221,8 @@ const closeOnEsc = event => {
         
         hideCatalogInfo();
         hideSearchInfo();
+
+        setInitialLoginOption();
     }
 };
 
@@ -218,5 +240,6 @@ closeSearchBarButton.addEventListener('click', hideSearchInfo);
 
 loginButton.addEventListener('click', showLoginPopup);
 loginWrapper.addEventListener('click', hideLoginPopup);
+loginOptions.forEach(option => option.addEventListener('click', changeLoginOption));
 
 window.addEventListener('keydown', closeOnEsc);
