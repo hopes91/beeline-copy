@@ -55,6 +55,8 @@ const displayInitialCatalogBlock = () => {
     const initialBlock = document.querySelector('.content-block.initial');
 
     initialBlock.style.display = 'block';
+
+    removeHighlightCatalogNavbarButton();
 };
 
 const toggleCatalogButtonSVG = catalogInfo => {
