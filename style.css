@@ -1054,6 +1054,20 @@ header * {
     display: none;
 }
 
+.login-forms-wrapper label {
+    position: relative;
+}
+
+.login-forms-wrapper .svg-wrapper {
+    bottom: 22px;
+    position: absolute;
+    right: 12px;
+}
+
+.login-forms-wrapper .svg-wrapper svg {
+    display: block;
+}
+
 .login-forms-wrapper input {
     background-color: #fbfbfb;
     border: 1px solid #dfe0e5;
@@ -1061,7 +1075,7 @@ header * {
     box-sizing: border-box;
     font-size: 16px;
     margin: 8px 0;
-    padding: 12px;
+    padding: 10px 12px;
     outline-color: #191c22;
     width: 100%;
 }

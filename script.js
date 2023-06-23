@@ -201,8 +201,12 @@ const changeLoginOption = event => {
 
     if (event.target.className === 'login-option') {
         event.target.className = 'chosen-option';
+
+        showChosenLoginForm(event.target.id);
     } else {
         event.currentTarget.className = 'chosen-option';
+
+        showChosenLoginForm(event.currentTarget.id);
     }
 };
 
@@ -210,6 +214,28 @@ const setInitialLoginOption = () => {
     loginOptions[0].className = 'chosen-option';
     loginOptions[1].className = 'login-option';
     loginOptions[2].className = 'login-option';
+
+    setInitialLoginForm();
+};
+
+const loginForms = document.querySelectorAll('.login-forms-wrapper form');
+
+const showChosenLoginForm = chosenLogin => {
+    loginForms.forEach(form => form.className = 'login-form');
+
+    if (chosenLogin.includes('mobile-id')) {
+        loginForms[0].className = 'chosen-form';
+    } else if (chosenLogin.includes('sms')) {
+        loginForms[1].className = 'chosen-form';
+    } else {
+        loginForms[2].className = 'chosen-form';
+    }
+};
+
+const setInitialLoginForm = () => {
+    loginForms[0].className = 'chosen-form';
+    loginForms[1].className = 'login-form';
+    loginForms[2].className = 'login-form';
 };
 
 // close popups or additional info blocks
