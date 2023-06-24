@@ -252,7 +252,7 @@ const setCaretPosition = input => {
 
 const deactivateLoginFormInput = () => {
     loginFormInputs.forEach(input => {
-        if (input.value = '+7 ___ ___-__-__') {
+        if (input.value === '+7 ___ ___-__-__') {
             input.value = '';
             input.blur();
 
