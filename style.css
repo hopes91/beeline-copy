@@ -1117,7 +1117,7 @@ header * {
     font-size: 16px;
     font-weight: 600;
     margin-top: 24px;
-    padding: 14px 24px;
+    padding: 12px 24px;
     transition: background-color 0.3s, border-color 0.3s;
     width: 180px;
 }
