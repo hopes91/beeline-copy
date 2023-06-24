@@ -1098,7 +1098,7 @@ header * {
 .password-recover {
     font-size: 16px;
     font-weight: 600;
-    margin-top: 24px;
+    margin-top: 16px;
     opacity: 1;
     transition: opacity 0.3s;
     width: 150px;
@@ -1116,9 +1116,9 @@ header * {
     color: #191c22;
     font-size: 16px;
     font-weight: 600;
-    margin-top: 32px;
-    padding: 10px 24px;
-    transition: background-color 0.3s, border-color 0.3s, color 0.3s;
+    margin-top: 24px;
+    padding: 14px 24px;
+    transition: background-color 0.3s, border-color 0.3s;
     width: 180px;
 }
 
@@ -1127,6 +1127,15 @@ header * {
     border-color: #dfe0e5;
     color: #bebec9;
     cursor: unset;
+}
+
+.login-forms-wrapper button:hover {
+    background-color: #ffd93a;
+    border-color: #ffd93a;
+}
+
+.login-forms-wrapper button:focus {
+    background-color: #FFCC00;
 }
 
 .catalog-info-background {
