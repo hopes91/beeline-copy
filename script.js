@@ -3,7 +3,6 @@ const topBannerButton = document.querySelector('.banner_top .banner-close');
 
 const hideTopBanner = () => {
     const topBanner = document.querySelector('.banner_top');
-    
     topBanner.classList.add('height-zero');
 };
 
@@ -42,7 +41,6 @@ const toggleCatalogInfo = () => {
 
 const hideCatalogInfo = () => {
     const catalogInfo = document.querySelector('.catalog-info-wrapper');
-
     catalogInfo.style.display = 'none';
 
     toggleCatalogButtonSVG(catalogInfo);
@@ -53,7 +51,6 @@ const hideCatalogInfo = () => {
 
 const displayInitialCatalogBlock = () => {
     const initialBlock = document.querySelector('.content-block.initial');
-
     initialBlock.style.display = 'block';
 
     removeHighlightCatalogNavbarButton();
@@ -109,12 +106,10 @@ const showCatalogBlock = currentButton => {
             break;
         }
     }
-    console.log(catalogBlocks);
 };
 
 const hideCatalogBlocks = () => {
     const catalogBlocks = document.querySelectorAll('.big-navbar .content-block');
-
     catalogBlocks.forEach(block => block.style.display = 'none');
 };
 
@@ -123,7 +118,6 @@ const searchBar = document.getElementById('search-bar');
 
 const hideButtonsToTheRight = () => {
     const buttonsToTheRight = document.querySelector('.bar_bottom .right');
-
     buttonsToTheRight.style.display = 'none';
 
     hideCatalogButton();
@@ -138,7 +132,6 @@ const hideCatalogButton = () => {
 
 const showHiddenButtons = () => {
     const hiddenButtons = document.querySelector('.hidden-buttons');
-
     hiddenButtons.style.display = 'flex';
 
     showSearchInfo();
@@ -146,7 +139,6 @@ const showHiddenButtons = () => {
 
 const showSearchInfo = () => {
     const searchInfo = document.querySelector('.search-info-wrapper');
-
     searchInfo.style.display = 'block';
 };
 
@@ -154,7 +146,6 @@ const closeSearchBarButton = document.getElementById('close-search');
 
 const hideSearchInfo = () => {
     const searchInfo = document.querySelector('.search-info-wrapper');
-
     searchInfo.style.display = 'none';
 
     hideHiddenButtons();
@@ -162,7 +153,6 @@ const hideSearchInfo = () => {
 
 const hideHiddenButtons = () => {
     const hiddenButtons = document.querySelector('.hidden-buttons');
-
     hiddenButtons.style.display = 'none';
 
     showCatalogButton();
@@ -176,7 +166,6 @@ const showCatalogButton = () => {
 
 const showButtonsToTheRight = () => {
     const buttonsToTheRight = document.querySelector('.bar_bottom .right');
-
     buttonsToTheRight.style.display = 'flex';
 };
 
@@ -232,12 +221,46 @@ const showChosenLoginForm = chosenLogin => {
     } else {
         loginForms[2].className = 'chosen-form';
     }
+
+    activateLoginFormInput();
 };
 
 const setInitialLoginForm = () => {
     loginForms[0].className = 'chosen-form';
     loginForms[1].className = 'login-form';
     loginForms[2].className = 'login-form';
+};
+
+const loginFormInputs = document.querySelectorAll('.login-forms-wrapper input');
+
+const activateLoginFormInput = () => {
+    loginFormInputs.forEach(input => {
+        if (input.placeholder.includes('+7')) {
+            input.value = '+7 ___ ___-__-__';
+            input.focus();
+
+            setCaretPosition(input);
+        } else if (input.placeholder.includes('Логин')) {
+            input.focus();
+        }
+    });
+};
+
+const setCaretPosition = input => {
+    input.setSelectionRange(3, 3);
+};
+
+const deactivateLoginFormInput = () => {
+    loginFormInputs.forEach(input => {
+        if (input.value = '+7 ___ ___-__-__') {
+            input.value = '';
+            input.blur();
+
+            setCaretPosition(input);
+        } else if (input.placeholder.includes('Логин')) {
+            input.blur();
+        }
+    });
 };
 
 // close popups or additional info blocks
@@ -267,5 +290,8 @@ closeSearchBarButton.addEventListener('click', hideSearchInfo);
 loginButton.addEventListener('click', showLoginPopup);
 loginWrapper.addEventListener('click', hideLoginPopup);
 loginOptions.forEach(option => option.addEventListener('click', changeLoginOption));
+loginFormInputs.forEach(input => input.addEventListener('focus', activateLoginFormInput));
+loginFormInputs.forEach(input => input.addEventListener('click', activateLoginFormInput));
+loginFormInputs.forEach(input => input.addEventListener('blur', deactivateLoginFormInput));
 
 window.addEventListener('keydown', closeOnEsc);
