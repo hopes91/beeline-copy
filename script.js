@@ -190,10 +190,12 @@ const loginOptions = document.querySelectorAll('.login-options-wrapper button');
 const changeLoginOption = event => {
     loginOptions.forEach(option => option.className = 'login-option');
 
-    if (event.target.className === 'login-option') {
-        event.target.className = 'chosen-option';
+    let loginOption = event.target;
 
-        showChosenLoginForm(event.target.id);
+    if (loginOption.className === 'login-option') {
+        loginOption.className = 'chosen-option';
+
+        showChosenLoginForm(loginOption.id);
     } else {
         event.currentTarget.className = 'chosen-option';
 
@@ -209,12 +211,11 @@ const setInitialLoginOption = () => {
     setInitialLoginForm();
 };
 
-const loginForms = document.querySelectorAll('.login-forms-wrapper form');
-
 const showChosenLoginForm = chosenLogin => {
+    const loginForms = document.querySelectorAll('.login-forms-wrapper form');
     loginForms.forEach(form => form.className = 'login-form');
 
-    if (chosenLogin.includes('mobile-id')) {
+    if (chosenLogin.includes('id')) {
         loginForms[0].className = 'chosen-form';
     } else if (chosenLogin.includes('sms')) {
         loginForms[1].className = 'chosen-form';
@@ -226,28 +227,34 @@ const showChosenLoginForm = chosenLogin => {
 };
 
 const setInitialLoginForm = () => {
+    const loginForms = document.querySelectorAll('.login-forms-wrapper form');
     loginForms[0].className = 'chosen-form';
     loginForms[1].className = 'login-form';
     loginForms[2].className = 'login-form';
 };
 
 const loginFormInputs = document.querySelectorAll('.login-forms-wrapper input');
+let loginValue = '+7 ___ ___-__-__';
 
 const activateLoginFormInput = () => {
     loginFormInputs.forEach(input => {
         if (input.placeholder.includes('+7')) {
-            input.value = '+7 ___ ___-__-__';
+            input.value = loginValue;
             input.focus();
 
-            setCaretPosition(input);
+            setCaretPosition(input, findCaretPosition());
         } else if (input.placeholder.includes('Логин')) {
             input.focus();
         }
     });
 };
 
-const setCaretPosition = input => {
-    input.setSelectionRange(3, 3);
+const setCaretPosition = (input, position) => {
+    input.setSelectionRange(position, position);
+};
+
+const findCaretPosition = () => {
+    return loginValue.search(/_/);
 };
 
 const deactivateLoginFormInput = () => {
@@ -256,7 +263,7 @@ const deactivateLoginFormInput = () => {
             input.value = '';
             input.blur();
 
-            setCaretPosition(input);
+            setCaretPosition(input, 3);
         } else if (input.placeholder.includes('Логин')) {
             input.blur();
         }
@@ -264,16 +271,34 @@ const deactivateLoginFormInput = () => {
 };
 
 const setLoginValue = event => {
-    activateSubmitLoginButton();
+    let input = event.target;
+
+    if ((input.id.includes ? 'id' : 'sms') && /\d/.test(event.data)) {
+        for (let i = 3; i < loginValue.length; i++) {
+            if (/_/.test(loginValue[i])) {
+                loginValue = loginValue.replace(loginValue[i], event.data);
+                input.value = loginValue;
+
+                setCaretPosition(input, i+1);
+                break;
+            } else if (i == loginValue.length - 1) {
+                input.value = loginValue;
+            }
+        }
+
+        activateSubmitLoginButton(input);
+    }
 };
 
-const activateSubmitLoginButton = () => {
-    loginForms.forEach(form => {
-        if (form.className === 'chosen-form') {
-            const submitButton = form.querySelector('button');
-            submitButton.removeAttribute('disabled');
-        }
-    });
+const activateSubmitLoginButton = input => {
+    const submitButtons = document.querySelectorAll('.login-forms-wrapper form button');
+
+    if (input.placeholder.includes('+7')) {
+        submitButtons[0].removeAttribute('disabled');
+        submitButtons[1].removeAttribute('disabled');
+    } else if (input.placeholder.includes('Логин')) {
+        submitButtons[2].removeAttribute('disabled');
+    }
 };
 
 // close popups or additional info blocks
