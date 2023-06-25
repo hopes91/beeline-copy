@@ -1078,6 +1078,58 @@ header * {
     display: block;
 }
 
+.svg-wrapper.note:hover > .note-wrapper {
+    display: block;
+}
+
+.note-wrapper {
+    background-color: #191c22;
+    border: 1px solid #191c22;
+    border-radius: 12px;
+    box-sizing: border-box;
+    display: none;
+    height: 80px;
+    left: -235px;
+    padding: 12px;
+    position: absolute;
+    top: -30px;
+    width: 220px;
+    z-index: 101;
+}
+
+.note-wrapper::before {
+    background-color: transparent;
+    border: 1px solid transparent;
+    border-radius: 12px;
+    box-sizing: border-box;
+    content: '';
+    height: 80px;
+    left: -1px;
+    padding: 12px;
+    position: absolute;
+    top: -1px;
+    width: 235px;
+}
+
+.note-wrapper:after {
+    content: '';
+    border-bottom: 8px solid transparent;
+    border-left: 16px solid #191c22;
+    border-top: 8px solid transparent;
+    height: 0;
+    position: absolute;
+    right: -13px;
+    top: 32px;
+    width: 0;
+}
+
+.note-wrapper .note {
+    color: #ffffff;
+    display: block;
+    font-size: 12px;
+    letter-spacing: normal;
+}
+
 .login-forms-wrapper input {
     background-color: #fbfbfb;
     border: 1px solid #dfe0e5;
