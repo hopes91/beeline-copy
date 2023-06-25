@@ -276,13 +276,6 @@ const activateSubmitLoginButton = () => {
     });
 };
 
-const deactivateSubmitLoginButton = () => {
-    loginForms.forEach(form => {
-        const submitButton = form.querySelector('button');
-        submitButton.addAttribute('disabled');
-    });
-};
-
 // close popups or additional info blocks
 const closeOnEsc = event => {
     if (event.keyCode === 27) {
@@ -315,5 +308,4 @@ loginFormInputs.forEach(input => input.addEventListener('click', activateLoginFo
 loginFormInputs.forEach(input => input.addEventListener('blur', deactivateLoginFormInput));
 loginFormInputs.forEach(input => input.addEventListener('input', setLoginValue));
 
-document.addEventListener('load', deactivateSubmitLoginButton);
 window.addEventListener('keydown', closeOnEsc);
