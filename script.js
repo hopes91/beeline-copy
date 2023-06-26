@@ -190,16 +190,12 @@ const loginOptions = document.querySelectorAll('.login-options-wrapper button');
 const changeLoginOption = event => {
     loginOptions.forEach(option => option.className = 'login-option');
 
-    let loginOption = event.target;
+    let loginOption = event.target.closest('button');
 
     if (loginOption.className === 'login-option') {
         loginOption.className = 'chosen-option';
 
         showChosenLoginForm(loginOption.id);
-    } else {
-        event.currentTarget.className = 'chosen-option';
-
-        showChosenLoginForm(event.currentTarget.id);
     }
 };
 
