@@ -286,6 +286,22 @@ const setLoginValue = event => {
     }
 };
 
+const eyeSVGs = document.querySelectorAll('.svg-wrapper.eye svg');
+
+const toggleEye = event => {
+    let clickedEye = event.target.closest('svg');
+    const svgClosed = document.querySelector('.svg-wrapper.eye svg.closed');
+    const svgOpened = document.querySelector('.svg-wrapper.eye svg.opened');
+
+    if (clickedEye.classList.value === 'closed') {
+        svgClosed.style.display = 'none';
+        svgOpened.style.display = 'block';
+    } else {
+        svgOpened.style.display = 'none';
+        svgClosed.style.display = 'block';
+    }
+};
+
 const activateSubmitLoginButton = input => {
     const submitButtons = document.querySelectorAll('.login-forms-wrapper form button');
 
@@ -328,5 +344,6 @@ loginFormInputs.forEach(input => input.addEventListener('focus', activateLoginFo
 loginFormInputs.forEach(input => input.addEventListener('click', activateLoginFormInput));
 loginFormInputs.forEach(input => input.addEventListener('blur', deactivateLoginFormInput));
 loginFormInputs.forEach(input => input.addEventListener('input', setLoginValue));
+eyeSVGs.forEach(svg => svg.addEventListener('click', toggleEye));
 
 window.addEventListener('keydown', closeOnEsc);

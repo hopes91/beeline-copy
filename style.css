@@ -388,8 +388,7 @@ header * {
     vertical-align: middle;
 }
 
-.catalog-button svg.closed,
-.catalog-button svg.opened {
+.catalog-button svg {
     font-size: 0;
     left: 0;
     line-height: 0;
@@ -1068,14 +1067,40 @@ header * {
     position: relative;
 }
 
+.login-forms-wrapper input {
+    background-color: #fbfbfb;
+    border: 1px solid #dfe0e5;
+    border-radius: 12px;
+    box-sizing: border-box;
+    font-size: 16px;
+    margin: 8px 0;
+    padding: 10px 12px;
+    transition: border-color 0.3s;
+    width: 100%;
+}
+
+.login-forms-wrapper input:hover {
+    border-color: #191c22;
+}
+
 .login-forms-wrapper .svg-wrapper {
-    bottom: 22px;
+    height: 20px;
     position: absolute;
     right: 12px;
+    width: 20px;
+}
+
+.svg-wrapper.note {
+    bottom: 21px;
+}
+
+.svg-wrapper.eye {
+    bottom: 20px;
 }
 
 .login-forms-wrapper .svg-wrapper svg {
     display: block;
+    position: absolute;
 }
 
 .svg-wrapper.note:hover > .note-wrapper {
@@ -1130,20 +1155,17 @@ header * {
     letter-spacing: normal;
 }
 
-.login-forms-wrapper input {
-    background-color: #fbfbfb;
-    border: 1px solid #dfe0e5;
-    border-radius: 12px;
-    box-sizing: border-box;
-    font-size: 16px;
-    margin: 8px 0;
-    padding: 10px 12px;
-    transition: border-color 0.3s;
-    width: 100%;
+.svg-wrapper.eye svg {
+    cursor: pointer;
+    /* transition: opacity 0.3s; */
 }
 
-.login-forms-wrapper input:hover {
-    border-color: #191c22;
+.svg-wrapper.eye svg.closed {
+    display: block;
+}
+
+.svg-wrapper.eye svg.opened {
+    display: none;
 }
 
 .password-recover {
