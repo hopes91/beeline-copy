@@ -241,17 +241,26 @@ let phoneLoginValue = '+7 ___ ___-__-__';
 let loginValue = '';
 let passwordValue = '';
 
-const activateLoginFormInput = () => {
-    loginFormInputs.forEach(input => {
-        if (input.placeholder.includes('+7')) {
-            input.value = loginValue;
-            input.focus();
+const activateLoginFormInput = event => {
+    let input = event.target;
+    let placeholder = event.target.placeholder;
 
-            setCaretPosition(input, findCaretPosition());
-        } else if (input.placeholder.includes('Логин')) {
-            input.focus();
-        }
-    });
+    if (placeholder.includes('+7')) {
+        input.value = phoneLoginValue;
+
+        input.focus();
+        setCaretPosition(input, findCaretPosition('phone'));
+    } else if (placeholder.includes('Логин')) {
+        input.value = loginValue;
+
+        input.focus();
+        setCaretPosition(input, findCaretPosition('login'));
+    } else if (placeholder.includes('Пароль')) {
+        input.value = passwordValue;
+
+        input.focus();
+        setCaretPosition(input, findCaretPosition('password'));
+    }
 };
 
 const setCaretPosition = (input, position) => {
@@ -272,11 +281,9 @@ const deactivateLoginFormInput = () => {
     loginFormInputs.forEach(input => {
         if (input.value === '+7 ___ ___-__-__') {
             input.value = '';
-            input.blur();
 
-            setCaretPosition(input, 3);
-        } else if (input.placeholder.includes('Логин')) {
             input.blur();
+            setCaretPosition(input, 3);
         }
     });
 };
