@@ -214,32 +214,43 @@ const changeLoginOption = event => {
     }
 };
 
-const showChosenLoginForm = chosenLoginId => {
+const showChosenLoginForm = chosenLoginID => {
     const loginForms = document.querySelectorAll('.login-forms-wrapper form');
     loginForms.forEach(form => form.className = 'login-form');
 
-    if (chosenLoginId.includes('id')) {
+    if (chosenLoginID.includes('id')) {
         loginForms[0].className = 'chosen-form';
-    } else if (chosenLoginId.includes('sms')) {
+    } else if (chosenLoginID.includes('sms')) {
         loginForms[1].className = 'chosen-form';
     } else {
         loginForms[2].className = 'chosen-form';
     }
 
-    activateLoginFormInput();
-};
-
-const setInitialLoginForm = () => {
-    const loginForms = document.querySelectorAll('.login-forms-wrapper form');
-    loginForms[0].className = 'chosen-form';
-    loginForms[1].className = 'login-form';
-    loginForms[2].className = 'login-form';
+    autoActivateLoginFormInput();
 };
 
 const loginFormInputs = document.querySelectorAll('.login-forms-wrapper input');
 let phoneLoginValue = '+7 ___ ___-__-__';
 let loginValue = '';
 let passwordValue = '';
+
+const autoActivateLoginFormInput = () => {
+    const firstLoginFormInputs = document.querySelectorAll('.login-forms-wrapper input.first')
+
+    firstLoginFormInputs.forEach((input, index) => {
+        if (index < 2) {
+            input.value = phoneLoginValue;
+
+            input.focus();
+            setCaretPosition(input, findCaretPosition('phone'));
+        } else if (index == 2) {
+            input.value = loginValue;
+
+            input.focus();
+            setCaretPosition(input, findCaretPosition('login'));
+        }
+    });
+};
 
 const activateLoginFormInput = event => {
     let input = event.target;
