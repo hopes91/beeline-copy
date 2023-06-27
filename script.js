@@ -290,22 +290,31 @@ const deactivateLoginFormInput = () => {
 
 const setLoginValue = event => {
     let input = event.target;
+    let placeholder = event.target.placeholder;
 
-    if ((input.id.includes ? 'id' : 'sms') && /\d/.test(event.data)) {
-        for (let i = 3; i < loginValue.length; i++) {
-            if (/_/.test(loginValue[i])) {
-                loginValue = loginValue.replace(loginValue[i], event.data);
-                input.value = loginValue;
+    if (placeholder.includes('+7')) {
+        if (!/\d/.test(event.data)) return;
+
+        for (let i = 3; i < phoneLoginValue.length; i++) {
+            if (/_/.test(phoneLoginValue[i])) {
+                phoneLoginValue = phoneLoginValue.replace(phoneLoginValue[i], event.data);
+                input.value = phoneLoginValue;
 
                 setCaretPosition(input, i+1);
                 break;
-            } else if (i == loginValue.length - 1) {
-                input.value = loginValue;
             }
         }
+    } else if (placeholder.includes('Логин')) {
+        loginValue = input.value;
 
-        activateSubmitLoginButton(input);
+        setCaretPosition(input, findCaretPosition('login'));
+    } else if (placeholder.includes('Пароль')) {
+        passwordValue = input.value;
+
+        setCaretPosition(input, findCaretPosition('password'));
     }
+    
+    activateSubmitLoginButton(input);
 };
 
 const eyeSVGs = document.querySelectorAll('.svg-wrapper.eye svg');
