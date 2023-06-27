@@ -1027,7 +1027,7 @@ header * {
 
 #mobile-id-option,
 #sms-option,
-#password-option {
+#login-option {
     border: 1px solid #dfe0e5;
     border-radius: 8px;
     font-size: 16px;

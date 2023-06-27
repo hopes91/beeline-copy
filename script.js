@@ -187,6 +187,21 @@ const hideLoginPopup = event => {
 
 const loginOptions = document.querySelectorAll('.login-options-wrapper button');
 
+const setInitialLoginOption = () => {
+    loginOptions[0].className = 'chosen-option';
+    loginOptions[1].className = 'login-option';
+    loginOptions[2].className = 'login-option';
+
+    setInitialLoginForm();
+};
+
+const setInitialLoginForm = () => {
+    const loginForms = document.querySelectorAll('.login-forms-wrapper form');
+    loginForms[0].className = 'chosen-form';
+    loginForms[1].className = 'login-form';
+    loginForms[2].className = 'login-form';
+};
+
 const changeLoginOption = event => {
     loginOptions.forEach(option => option.className = 'login-option');
 
@@ -199,21 +214,13 @@ const changeLoginOption = event => {
     }
 };
 
-const setInitialLoginOption = () => {
-    loginOptions[0].className = 'chosen-option';
-    loginOptions[1].className = 'login-option';
-    loginOptions[2].className = 'login-option';
-
-    setInitialLoginForm();
-};
-
-const showChosenLoginForm = chosenLogin => {
+const showChosenLoginForm = chosenLoginId => {
     const loginForms = document.querySelectorAll('.login-forms-wrapper form');
     loginForms.forEach(form => form.className = 'login-form');
 
-    if (chosenLogin.includes('id')) {
+    if (chosenLoginId.includes('id')) {
         loginForms[0].className = 'chosen-form';
-    } else if (chosenLogin.includes('sms')) {
+    } else if (chosenLoginId.includes('sms')) {
         loginForms[1].className = 'chosen-form';
     } else {
         loginForms[2].className = 'chosen-form';
@@ -230,7 +237,9 @@ const setInitialLoginForm = () => {
 };
 
 const loginFormInputs = document.querySelectorAll('.login-forms-wrapper input');
-let loginValue = '+7 ___ ___-__-__';
+let phoneLoginValue = '+7 ___ ___-__-__';
+let loginValue = '';
+let passwordValue = '';
 
 const activateLoginFormInput = () => {
     loginFormInputs.forEach(input => {
@@ -249,8 +258,14 @@ const setCaretPosition = (input, position) => {
     input.setSelectionRange(position, position);
 };
 
-const findCaretPosition = () => {
-    return loginValue.search(/_/);
+const findCaretPosition = inputType => {
+    if (inputType === 'phone') {
+        return phoneLoginValue.search(/_/);
+    } else if (inputType === 'login') {
+        return loginValue.length;
+    } else if (inputType === 'password') {
+        return passwordValue.length;
+    }
 };
 
 const deactivateLoginFormInput = () => {
@@ -317,8 +332,8 @@ const activateSubmitLoginButton = input => {
 const closeOnEsc = event => {
     if (event.keyCode === 27) {
         const popups = document.querySelectorAll('.popup');
-
         popups.forEach(popup => popup.style.display = 'none');
+
         hideCatalogInfo();
         hideSearchInfo();
         setInitialLoginOption();
