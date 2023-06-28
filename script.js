@@ -300,14 +300,10 @@ const deactivateLoginFormInput = () => {
 };
 
 const setLoginValue = event => {
-    let placeholder = event.target.placeholder;
-
-    if (placeholder.includes('+7')) {
+    if (event.target.placeholder.includes('+7')) {
         setNumValues(event);
-    } else if (placeholder.includes('Логин') || placeholder.includes('Пароль')) {
+    } else {
         setNumLetCharValues(event);
-    } else if (event.keyCode == 8) {
-        console.log(event.keyCode);
     }
     
     activateSubmitLoginButton(event.target);
@@ -378,7 +374,7 @@ const activateSubmitLoginButton = input => {
 
 // close popups or additional info blocks
 const closeOnEsc = event => {
-    if (event.keyCode == 27) {
+    if (event.key === 'Escape') {
         const popups = document.querySelectorAll('.popup');
         popups.forEach(popup => popup.style.display = 'none');
 
