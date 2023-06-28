@@ -300,32 +300,53 @@ const deactivateLoginFormInput = () => {
 };
 
 const setLoginValue = event => {
-    let input = event.target;
     let placeholder = event.target.placeholder;
 
     if (placeholder.includes('+7')) {
-        if (!/\d/.test(event.data)) return;
+        setNumValues(event);
+    } else if (placeholder.includes('Логин') || placeholder.includes('Пароль')) {
+        setNumLetCharValues(event);
+    } else if (event.keyCode == 8) {
+        console.log(event.keyCode);
+    }
+    
+    activateSubmitLoginButton(event.target);
+};
 
-        for (let i = 3; i < phoneLoginValue.length; i++) {
-            if (/_/.test(phoneLoginValue[i])) {
+const setNumValues = event => {
+    const numInputs = document.querySelectorAll('.login-forms-wrapper input.num');
+    let input = event.target;
+
+    if (!/\d/.test(event.data)) return;
+
+    for (let i = 3; i < phoneLoginValue.length; i++) {
+        if (/_/.test(phoneLoginValue[i])) {
+            numInputs.forEach(input => {
                 phoneLoginValue = phoneLoginValue.replace(phoneLoginValue[i], event.data);
                 input.value = phoneLoginValue;
 
                 setCaretPosition(input, i+1);
-                break;
-            }
+            });
+
+            break;
+        } else if (i == phoneLoginValue.length - 1) {
+            input.value = phoneLoginValue;
         }
-    } else if (placeholder.includes('Логин')) {
+    }
+};
+
+const setNumLetCharValues = event => {
+    let input = event.target;
+
+    if (input.placeholder.includes('Логин')) {
         loginValue = input.value;
 
         setCaretPosition(input, findCaretPosition('login'));
-    } else if (placeholder.includes('Пароль')) {
+    } else if (input.placeholder.includes('Пароль')) {
         passwordValue = input.value;
 
         setCaretPosition(input, findCaretPosition('password'));
     }
-    
-    activateSubmitLoginButton(input);
 };
 
 const eyeSVGs = document.querySelectorAll('.svg-wrapper.eye svg');
@@ -357,7 +378,7 @@ const activateSubmitLoginButton = input => {
 
 // close popups or additional info blocks
 const closeOnEsc = event => {
-    if (event.keyCode === 27) {
+    if (event.keyCode == 27) {
         const popups = document.querySelectorAll('.popup');
         popups.forEach(popup => popup.style.display = 'none');
 
