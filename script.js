@@ -301,6 +301,10 @@ const deactivateLoginFormInput = () => {
 
 const setLoginValue = event => {
     if (event.target.placeholder.includes('+7')) {
+        if (event.inputType === 'deleteContentBackward') {
+            deleteNumValues(event);
+        }
+        
         setNumValues(event);
     } else {
         setNumLetCharValues(event);
@@ -310,23 +314,39 @@ const setLoginValue = event => {
 };
 
 const setNumValues = event => {
-    const numInputs = document.querySelectorAll('.login-forms-wrapper input.num');
     let input = event.target;
 
     if (!/\d/.test(event.data)) return;
 
     for (let i = 3; i < phoneLoginValue.length; i++) {
         if (/_/.test(phoneLoginValue[i])) {
-            numInputs.forEach(input => {
-                phoneLoginValue = phoneLoginValue.replace(phoneLoginValue[i], event.data);
-                input.value = phoneLoginValue;
+            phoneLoginValue = phoneLoginValue.replace(phoneLoginValue[i], event.data);
+            input.value = phoneLoginValue;
 
-                setCaretPosition(input, i+1);
-            });
-
+            setCaretPosition(input, i+1);
             break;
         } else if (i == phoneLoginValue.length - 1) {
             input.value = phoneLoginValue;
+        }
+    }
+};
+
+const deleteNumValues = event => {
+    let input = event.target;
+    let reversedPhone = phoneLoginValue.split('').reverse().join('');
+
+    for (let i = phoneLoginValue.length - 1; i >= 3; i--) {
+        if (phoneLoginValue.startsWith('+7 _')) {
+            input.value = phoneLoginValue;
+
+            setCaretPosition(input, 3);
+        } else if (/\d/.test(phoneLoginValue[i])) {
+            reversedPhone = reversedPhone.replace(reversedPhone[(phoneLoginValue.length - 1) - i], '_');
+            phoneLoginValue = reversedPhone.split('').reverse().join('');
+            input.value = phoneLoginValue;
+
+            setCaretPosition(input, i);
+            break;
         }
     }
 };
