@@ -68,21 +68,21 @@ const displayInitialCatalogBlock = () => {
     const initialBlock = document.querySelector('.content-block.initial');
     initialBlock.style.display = 'block';
 
-    removeHighlightCatalogNavbarButton();
+    catalogNavButtonOff();
 };
 
-const catalogButtons = document.querySelectorAll('.small-navbar button');
+const catalogNavButtons = document.querySelectorAll('.small-navbar button');
 
-const addHighlightCatalogNavbarButton = event => {
-    removeHighlightCatalogNavbarButton();
+const catalogNavButtonOff = () => {
+    catalogNavButtons.forEach(button => button.classList.remove('chosen-section'));
+};
+
+const catalogNavButtonOn = event => {
+    catalogNavButtonOff();
 
     event.currentTarget.classList.add('chosen-section');
 
     showCatalogBlock(event.currentTarget.innerText);
-};
-
-const removeHighlightCatalogNavbarButton = () => {
-    catalogButtons.forEach(button => button.classList.remove('chosen-section'));
 };
 
 const showCatalogBlock = currentButton => {
@@ -91,7 +91,7 @@ const showCatalogBlock = currentButton => {
     const catalogBlocks = document.querySelectorAll('.big-navbar .content-block');
 
     for (let block of catalogBlocks) {
-        if (block.childNodes[1].innerText === currentButton) {
+        if (currentButton === block.childNodes[1].innerText) {
             block.style.display = 'block';
             break;
         }
@@ -390,7 +390,7 @@ chosenRegionButton.addEventListener('click', showRegionsPopup);
 regionsWrapper.addEventListener('click', hideRegionsPopup);
 
 catalogButton.addEventListener('click', toggleCatalog);
-catalogButtons.forEach(button => button.addEventListener('mouseover', addHighlightCatalogNavbarButton));
+catalogNavButtons.forEach(button => button.addEventListener('mouseover', catalogNavButtonOn));
 
 searchBar.addEventListener('focus', hideButtonsToTheRight);
 searchBar.addEventListener('click', hideButtonsToTheRight);
