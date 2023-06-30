@@ -372,16 +372,19 @@ const activateSubmitLoginButton = input => {
     }
 };
 
-// close popups or additional info blocks
-const closeOnEsc = event => {
+const manageKeyDown = event => {
     if (event.key === 'Escape') {
-        const popups = document.querySelectorAll('.popup');
-        popups.forEach(popup => popup.style.display = 'none');
-
-        toggleCatalog();
-        hideSearchInfo();
-        setInitialLoginOption();
+        closeOnEsc();
     }
+};
+
+const closeOnEsc = () => {
+    const popups = document.querySelectorAll('.popup');
+    popups.forEach(popup => popup.style.display = 'none');
+
+    toggleCatalog('close');
+    hideSearchInfo();
+    setInitialLoginOption();
 };
 
 topBannerButton.addEventListener('click', hideTopBanner);
@@ -405,4 +408,4 @@ loginFormInputs.forEach(input => input.addEventListener('blur', deactivateLoginF
 loginFormInputs.forEach(input => input.addEventListener('input', setLoginValue));
 eyeSVGs.forEach(svg => svg.addEventListener('click', toggleEye));
 
-window.addEventListener('keydown', closeOnEsc);
+window.addEventListener('keydown', manageKeyDown);
