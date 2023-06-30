@@ -263,14 +263,8 @@ const activateLoginFormInput = event => {
         setCaretPosition(input, findCaretPosition('phone'));
     } else if (placeholder.includes('Логин')) {
         input.value = loginValue;
-
-        input.focus();
-        setCaretPosition(input, findCaretPosition('login'));
     } else if (placeholder.includes('Пароль')) {
         input.value = passwordValue;
-
-        input.focus();
-        setCaretPosition(input, findCaretPosition('password'));
     }
 };
 
@@ -356,12 +350,8 @@ const setNumLetCharValues = event => {
 
     if (input.placeholder.includes('Логин')) {
         loginValue = input.value;
-
-        setCaretPosition(input, findCaretPosition('login'));
     } else if (input.placeholder.includes('Пароль')) {
         passwordValue = input.value;
-
-        setCaretPosition(input, findCaretPosition('password'));
     }
 };
 
