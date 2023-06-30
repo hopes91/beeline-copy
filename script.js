@@ -23,7 +23,7 @@ const hideRegionsPopup = event => {
 // catalog content
 const catalogButton = document.querySelector('.catalog-button');
 
-const toggleCatalogInfo = () => {
+const toggleCatalog = () => {
     const catalogInfo = document.querySelector('.catalog-info-wrapper');
 
     if (catalogInfo.style.display === 'block') {
@@ -116,7 +116,7 @@ const hideButtonsToTheRight = () => {
 const hideCatalogButton = () => {
     catalogButton.style.display = 'none';
 
-    toggleCatalogInfo();
+    toggleCatalog();
     showHiddenButtons();
 };
 
@@ -378,7 +378,7 @@ const closeOnEsc = event => {
         const popups = document.querySelectorAll('.popup');
         popups.forEach(popup => popup.style.display = 'none');
 
-        toggleCatalogInfo();
+        toggleCatalog();
         hideSearchInfo();
         setInitialLoginOption();
     }
@@ -389,7 +389,7 @@ topBannerButton.addEventListener('click', hideTopBanner);
 chosenRegionButton.addEventListener('click', showRegionsPopup);
 regionsWrapper.addEventListener('click', hideRegionsPopup);
 
-catalogButton.addEventListener('click', toggleCatalogInfo);
+catalogButton.addEventListener('click', toggleCatalog);
 catalogButtons.forEach(button => button.addEventListener('mouseover', addHighlightCatalogNavbarButton));
 
 searchBar.addEventListener('focus', hideButtonsToTheRight);
