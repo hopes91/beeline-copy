@@ -39,16 +39,6 @@ const toggleCatalogInfo = () => {
     changeCatalogBackColor(catalogInfo);
 };
 
-const hideCatalogInfo = () => {
-    const catalogInfo = document.querySelector('.catalog-info-wrapper');
-    catalogInfo.style.display = 'none';
-
-    toggleCatalogButtonSVG(catalogInfo);
-    changeCatalogBackColor(catalogInfo);
-    hideCatalogBlocks();
-    displayInitialCatalogBlock();
-};
-
 const displayInitialCatalogBlock = () => {
     const initialBlock = document.querySelector('.content-block.initial');
     initialBlock.style.display = 'block';
@@ -126,7 +116,7 @@ const hideButtonsToTheRight = () => {
 const hideCatalogButton = () => {
     catalogButton.style.display = 'none';
 
-    hideCatalogInfo();
+    toggleCatalogInfo();
     showHiddenButtons();
 };
 
@@ -388,7 +378,7 @@ const closeOnEsc = event => {
         const popups = document.querySelectorAll('.popup');
         popups.forEach(popup => popup.style.display = 'none');
 
-        hideCatalogInfo();
+        toggleCatalogInfo();
         hideSearchInfo();
         setInitialLoginOption();
     }
