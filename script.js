@@ -128,14 +128,14 @@ const showHiddenButtons = () => {
 };
 
 const showSearchInfo = () => {
-    const searchInfo = document.querySelector('.search-info-wrapper');
+    const searchInfo = document.querySelector('.search-wrapper');
     searchInfo.style.display = 'block';
 };
 
 const closeSearchBarButton = document.getElementById('close-search');
 
 const hideSearchInfo = () => {
-    const searchInfo = document.querySelector('.search-info-wrapper');
+    const searchInfo = document.querySelector('.search-wrapper');
     searchInfo.style.display = 'none';
 
     hideHiddenButtons();
