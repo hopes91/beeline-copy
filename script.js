@@ -23,10 +23,10 @@ const hideRegionsPopup = event => {
 // catalog content
 const catalogButton = document.querySelector('.catalog-button');
 
-const toggleCatalog = () => {
+const toggleCatalog = additionalInfo => {
     const catalogWrapper = document.querySelector('.catalog-wrapper');
 
-    if (catalogWrapper.style.display === 'block') {
+    if (catalogWrapper.style.display === 'block' || additionalInfo === 'close') {
         catalogWrapper.style.display = 'none';
 
         hideCatalogBlocks();
