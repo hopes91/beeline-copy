@@ -24,33 +24,26 @@ const hideRegionsPopup = event => {
 const catalogButton = document.querySelector('.catalog-button');
 
 const toggleCatalog = () => {
-    const catalogInfo = document.querySelector('.catalog-info-wrapper');
+    const catalogWrapper = document.querySelector('.catalog-wrapper');
 
-    if (catalogInfo.style.display === 'block') {
-        catalogInfo.style.display = 'none';
+    if (catalogWrapper.style.display === 'block') {
+        catalogWrapper.style.display = 'none';
 
         hideCatalogBlocks();
         displayInitialCatalogBlock();
     } else {
-        catalogInfo.style.display = 'block';
+        catalogWrapper.style.display = 'block';
     }
 
-    toggleCatalogButtonSVG(catalogInfo);
-    changeCatalogBackColor(catalogInfo);
+    toggleCatalogButtonSVG(catalogWrapper);
+    toggleCatalogBackground(catalogWrapper);
 };
 
-const displayInitialCatalogBlock = () => {
-    const initialBlock = document.querySelector('.content-block.initial');
-    initialBlock.style.display = 'block';
-
-    removeHighlightCatalogNavbarButton();
-};
-
-const toggleCatalogButtonSVG = catalogInfo => {
+const toggleCatalogButtonSVG = catalogWrapper => {
     const svgClosed = document.querySelector('.catalog-button svg.closed');
     const svgOpened = document.querySelector('.catalog-button svg.opened');
 
-    if (catalogInfo.style.display === 'block') {
+    if (catalogWrapper.style.display === 'block') {
         svgClosed.style.opacity = '0';
         svgOpened.style.opacity = '1';
     } else {
@@ -59,16 +52,23 @@ const toggleCatalogButtonSVG = catalogInfo => {
     }
 };
 
-const changeCatalogBackColor = catalogInfo => {
-    const catalogBackground = document.querySelector('.catalog-info-background');
+const toggleCatalogBackground = catalogWrapper => {
+    const catalogBackground = document.querySelector('.catalog-background');
 
-    if (catalogInfo.style.display === 'block') {
+    if (catalogWrapper.style.display === 'block') {
         catalogBackground.style.display = 'block';
         catalogBackground.style.opacity = '0.3';
     } else {
         catalogBackground.style.display = 'none';
         catalogBackground.style.opacity = '0';
     }
+};
+
+const displayInitialCatalogBlock = () => {
+    const initialBlock = document.querySelector('.content-block.initial');
+    initialBlock.style.display = 'block';
+
+    removeHighlightCatalogNavbarButton();
 };
 
 const catalogButtons = document.querySelectorAll('.small-navbar button');

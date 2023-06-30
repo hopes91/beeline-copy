@@ -544,7 +544,7 @@ header * {
     color: #D9D9D9;
 }
 
-.catalog-info-wrapper {
+.catalog-wrapper {
     animation: slide-down-appear 0.3s ease-in-out forwards;
     background-color: #ffffff;
     border-bottom: 1px solid #dfe0e5;
@@ -565,7 +565,7 @@ header * {
     }
 }
 
-.catalog-info {
+.catalog {
     box-sizing: border-box;
     display: flex;
     margin: 0 auto;
@@ -1211,7 +1211,7 @@ header * {
     cursor: unset;
 }
 
-.catalog-info-background {
+.catalog-background {
     background-color: #191c22;
     bottom: 0;
     display: none;
