@@ -106,17 +106,17 @@ const hideCatalogBlocks = () => {
 // search bar content
 const searchBar = document.getElementById('search-bar');
 
+const hideCatalogButton = () => {
+    catalogButton.style.display = 'none';
+
+    toggleCatalog('close');
+    hideButtonsToTheRight();
+};
+
 const hideButtonsToTheRight = () => {
     const buttonsToTheRight = document.querySelector('.bar_bottom .right');
     buttonsToTheRight.style.display = 'none';
 
-    hideCatalogButton();
-};
-
-const hideCatalogButton = () => {
-    catalogButton.style.display = 'none';
-
-    toggleCatalog();
     showHiddenButtons();
 };
 
@@ -392,8 +392,8 @@ regionsWrapper.addEventListener('click', hideRegionsPopup);
 catalogButton.addEventListener('click', toggleCatalog);
 catalogNavButtons.forEach(button => button.addEventListener('mouseover', catalogNavButtonOn));
 
-searchBar.addEventListener('focus', hideButtonsToTheRight);
-searchBar.addEventListener('click', hideButtonsToTheRight);
+searchBar.addEventListener('focus', hideCatalogButton);
+searchBar.addEventListener('click', hideCatalogButton);
 closeSearchBarButton.addEventListener('click', hideSearchInfo);
 
 loginButton.addEventListener('click', showLoginPopup);
