@@ -163,11 +163,11 @@ const showButtonsToTheRight = () => {
 const loginWrapper = document.querySelector('.login-wrapper');
 const loginButton = document.getElementById('login-button');
 
-const showLoginPopup = () => {
+const showLogin = () => {
     loginWrapper.style.display = 'flex';
 };
 
-const hideLoginPopup = event => {
+const hideLogin = event => {
     if (event.target.classList.contains('close')) {
         loginWrapper.style.display = 'none';
 
@@ -399,8 +399,8 @@ searchBar.addEventListener('focus', hideCatalogButton);
 searchBar.addEventListener('click', hideCatalogButton);
 closeSearchBarButton.addEventListener('click', hideSearchInfo);
 
-loginButton.addEventListener('click', showLoginPopup);
-loginWrapper.addEventListener('click', hideLoginPopup);
+loginButton.addEventListener('click', showLogin);
+loginWrapper.addEventListener('click', hideLogin);
 loginOptions.forEach(option => option.addEventListener('click', changeLoginOption));
 loginFormInputs.forEach(input => input.addEventListener('focus', activateLoginFormInput));
 loginFormInputs.forEach(input => input.addEventListener('click', activateLoginFormInput));
