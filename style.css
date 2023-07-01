@@ -1181,7 +1181,7 @@ header * {
     opacity: 0.7;
 }
 
-.login-forms button {
+.login-submit {
     background-color: #ffe632;
     border: 1px solid #ffe632;
     border-radius: 12px;
@@ -1195,16 +1195,16 @@ header * {
     width: 180px;
 }
 
-.login-forms button:hover {
+.login-submit:hover {
     background-color: #ffd93a;
     border-color: #ffd93a;
 }
 
-.login-forms button:focus {
+.login-submit:focus {
     background-color: #FFCC00;
 }
 
-.login-forms button:disabled {
+.login-submit:disabled {
     background-color: #dfe0e5;
     border-color: #dfe0e5;
     color: #bebec9;

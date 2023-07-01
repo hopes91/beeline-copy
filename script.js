@@ -362,7 +362,7 @@ const toggleEye = event => {
 };
 
 const activateSubmitLoginButton = input => {
-    const submitButtons = document.querySelectorAll('.login-forms-wrapper form button');
+    const submitButtons = document.querySelectorAll('.login-submit');
 
     if (input.placeholder.includes('+7')) {
         submitButtons[0].removeAttribute('disabled');
