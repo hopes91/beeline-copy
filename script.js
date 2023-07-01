@@ -220,7 +220,7 @@ const showChosenLoginForm = chosenLoginID => {
 };
 
 const loginInputs = document.querySelectorAll('.login-forms input');
-let phoneLoginValue = '+7 ___ ___-__-__';
+let phoneValue = '+7 ___ ___-__-__';
 let loginValue = '';
 let passwordValue = '';
 
@@ -229,7 +229,7 @@ const autoActivateLoginInput = () => {
 
     firstLoginInputs.forEach((input, index) => {
         if (index < 2) {
-            input.value = phoneLoginValue;
+            input.value = phoneValue;
 
             input.focus();
             setCaretPosition(input, findCaretPosition('phone'));
@@ -247,7 +247,7 @@ const activateLoginInput = event => {
     let placeholder = event.target.placeholder;
 
     if (placeholder.includes('+7')) {
-        input.value = phoneLoginValue;
+        input.value = phoneValue;
 
         input.focus();
         setCaretPosition(input, findCaretPosition('phone'));
@@ -264,7 +264,7 @@ const setCaretPosition = (input, position) => {
 
 const findCaretPosition = inputType => {
     if (inputType === 'phone') {
-        return phoneLoginValue.search(/_/);
+        return phoneValue.search(/_/);
     } else if (inputType === 'login') {
         return loginValue.length;
     } else if (inputType === 'password') {
@@ -288,7 +288,7 @@ const setLoginValue = event => {
         if (event.inputType === 'deleteContentBackward') {
             deleteNumValues(event);
         }
-        
+
         setNumValues(event);
     } else {
         setNumLetCharValues(event);
@@ -302,32 +302,32 @@ const setNumValues = event => {
 
     if (!/\d/.test(event.data)) return;
 
-    for (let i = 3; i < phoneLoginValue.length; i++) {
-        if (/_/.test(phoneLoginValue[i])) {
-            phoneLoginValue = phoneLoginValue.replace(phoneLoginValue[i], event.data);
-            input.value = phoneLoginValue;
+    for (let i = 3; i < phoneValue.length; i++) {
+        if (/_/.test(phoneValue[i])) {
+            phoneValue = phoneValue.replace(phoneValue[i], event.data);
+            input.value = phoneValue;
 
             setCaretPosition(input, i+1);
             break;
-        } else if (i == phoneLoginValue.length - 1) {
-            input.value = phoneLoginValue;
+        } else if (i == phoneValue.length - 1) {
+            input.value = phoneValue;
         }
     }
 };
 
 const deleteNumValues = event => {
     let input = event.target;
-    let reversedPhone = phoneLoginValue.split('').reverse().join('');
+    let reversedPhone = phoneValue.split('').reverse().join('');
 
-    for (let i = phoneLoginValue.length - 1; i >= 3; i--) {
-        if (phoneLoginValue.startsWith('+7 _')) {
-            input.value = phoneLoginValue;
+    for (let i = phoneValue.length - 1; i >= 3; i--) {
+        if (phoneValue.startsWith('+7 _')) {
+            input.value = phoneValue;
 
             setCaretPosition(input, 3);
-        } else if (/\d/.test(phoneLoginValue[i])) {
-            reversedPhone = reversedPhone.replace(reversedPhone[(phoneLoginValue.length - 1) - i], '_');
-            phoneLoginValue = reversedPhone.split('').reverse().join('');
-            input.value = phoneLoginValue;
+        } else if (/\d/.test(phoneValue[i])) {
+            reversedPhone = reversedPhone.replace(reversedPhone[(phoneValue.length - 1) - i], '_');
+            phoneValue = reversedPhone.split('').reverse().join('');
+            input.value = phoneValue;
 
             setCaretPosition(input, i);
             break;
