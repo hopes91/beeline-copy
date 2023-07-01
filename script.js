@@ -216,18 +216,18 @@ const showChosenLoginForm = chosenLoginID => {
         loginForms[2].className = 'chosen-form';
     }
 
-    autoActivateLoginFormInput();
+    autoActivateLoginInput();
 };
 
-const loginFormInputs = document.querySelectorAll('.login-forms input');
+const loginInputs = document.querySelectorAll('.login-forms input');
 let phoneLoginValue = '+7 ___ ___-__-__';
 let loginValue = '';
 let passwordValue = '';
 
-const autoActivateLoginFormInput = () => {
-    const firstLoginFormInputs = document.querySelectorAll('.login-forms input.first')
+const autoActivateLoginInput = () => {
+    const firstLoginInputs = document.querySelectorAll('.login-forms input.first')
 
-    firstLoginFormInputs.forEach((input, index) => {
+    firstLoginInputs.forEach((input, index) => {
         if (index < 2) {
             input.value = phoneLoginValue;
 
@@ -242,7 +242,7 @@ const autoActivateLoginFormInput = () => {
     });
 };
 
-const activateLoginFormInput = event => {
+const activateLoginInput = event => {
     let input = event.target;
     let placeholder = event.target.placeholder;
 
@@ -272,8 +272,8 @@ const findCaretPosition = inputType => {
     }
 };
 
-const deactivateLoginFormInput = () => {
-    loginFormInputs.forEach(input => {
+const deactivateLoginInput = () => {
+    loginInputs.forEach(input => {
         if (input.value === '+7 ___ ___-__-__') {
             input.value = '';
 
@@ -402,10 +402,10 @@ closeSearchBarButton.addEventListener('click', hideSearchInfo);
 loginButton.addEventListener('click', showLogin);
 loginWrapper.addEventListener('click', hideLogin);
 loginOptions.forEach(option => option.addEventListener('click', changeLoginOption));
-loginFormInputs.forEach(input => input.addEventListener('focus', activateLoginFormInput));
-loginFormInputs.forEach(input => input.addEventListener('click', activateLoginFormInput));
-loginFormInputs.forEach(input => input.addEventListener('blur', deactivateLoginFormInput));
-loginFormInputs.forEach(input => input.addEventListener('input', setLoginValue));
+loginInputs.forEach(input => input.addEventListener('focus', activateLoginInput));
+loginInputs.forEach(input => input.addEventListener('click', activateLoginInput));
+loginInputs.forEach(input => input.addEventListener('blur', deactivateLoginInput));
+loginInputs.forEach(input => input.addEventListener('input', setLoginValue));
 eyeSVGs.forEach(svg => svg.addEventListener('click', toggleEye));
 
 window.addEventListener('keydown', manageKeyDown);
