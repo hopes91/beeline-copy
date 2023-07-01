@@ -359,6 +359,14 @@ const toggleEye = event => {
         svgOpened.style.display = 'none';
         svgClosed.style.display = 'block';
     }
+
+    togglePassword();
+};
+
+const togglePassword = () => {
+    const passwordInput = document.getElementById('password');
+    let type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+    passwordInput.setAttribute('type', type);
 };
 
 const activateSubmitLoginButton = input => {
