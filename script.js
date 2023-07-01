@@ -175,7 +175,7 @@ const hideLoginPopup = event => {
     }
 };
 
-const loginOptions = document.querySelectorAll('.login-options-wrapper button');
+const loginOptions = document.querySelectorAll('.login-options button');
 
 const setInitialLoginOption = () => {
     loginOptions[0].className = 'chosen-option';

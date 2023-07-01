@@ -1001,7 +1001,7 @@ header * {
     padding: 0 48px 96px 48px;
 }
 
-.login-options-wrapper {
+.login-options {
     display: flex;
 }
 
