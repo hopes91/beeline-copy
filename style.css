@@ -1046,11 +1046,11 @@ header * {
     vertical-align: middle;
 }
 
-.login-forms-wrapper {
+.login-forms {
     margin-top: 24px;
 }
 
-.login-forms-wrapper form {
+.login-forms form {
     flex-direction: column;
 }
 
@@ -1062,12 +1062,12 @@ header * {
     display: none;
 }
 
-.login-forms-wrapper label {
+.login-forms label {
     font-size: 16px;
     position: relative;
 }
 
-.login-forms-wrapper input {
+.login-forms input {
     background-color: #fbfbfb;
     border: 1px solid #dfe0e5;
     border-radius: 12px;
@@ -1079,11 +1079,11 @@ header * {
     width: 100%;
 }
 
-.login-forms-wrapper input:hover {
+.login-forms input:hover {
     border-color: #191c22;
 }
 
-.login-forms-wrapper .svg-wrapper {
+.login-forms .svg-wrapper {
     height: 20px;
     position: absolute;
     right: 12px;
@@ -1098,7 +1098,7 @@ header * {
     bottom: 20px;
 }
 
-.login-forms-wrapper .svg-wrapper svg {
+.login-forms .svg-wrapper svg {
     display: block;
     position: absolute;
 }
@@ -1181,7 +1181,7 @@ header * {
     opacity: 0.7;
 }
 
-.login-forms-wrapper button {
+.login-forms button {
     background-color: #ffe632;
     border: 1px solid #ffe632;
     border-radius: 12px;
@@ -1195,16 +1195,16 @@ header * {
     width: 180px;
 }
 
-.login-forms-wrapper button:hover {
+.login-forms button:hover {
     background-color: #ffd93a;
     border-color: #ffd93a;
 }
 
-.login-forms-wrapper button:focus {
+.login-forms button:focus {
     background-color: #FFCC00;
 }
 
-.login-forms-wrapper button:disabled {
+.login-forms button:disabled {
     background-color: #dfe0e5;
     border-color: #dfe0e5;
     color: #bebec9;

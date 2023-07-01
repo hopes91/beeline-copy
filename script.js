@@ -186,7 +186,7 @@ const setInitialLoginOption = () => {
 };
 
 const setInitialLoginForm = () => {
-    const loginForms = document.querySelectorAll('.login-forms-wrapper form');
+    const loginForms = document.querySelectorAll('.login-forms form');
     loginForms[0].className = 'chosen-form';
     loginForms[1].className = 'login-form';
     loginForms[2].className = 'login-form';
@@ -205,7 +205,7 @@ const changeLoginOption = event => {
 };
 
 const showChosenLoginForm = chosenLoginID => {
-    const loginForms = document.querySelectorAll('.login-forms-wrapper form');
+    const loginForms = document.querySelectorAll('.login-forms form');
     loginForms.forEach(form => form.className = 'login-form');
 
     if (chosenLoginID.includes('id')) {
@@ -219,13 +219,13 @@ const showChosenLoginForm = chosenLoginID => {
     autoActivateLoginFormInput();
 };
 
-const loginFormInputs = document.querySelectorAll('.login-forms-wrapper input');
+const loginFormInputs = document.querySelectorAll('.login-forms input');
 let phoneLoginValue = '+7 ___ ___-__-__';
 let loginValue = '';
 let passwordValue = '';
 
 const autoActivateLoginFormInput = () => {
-    const firstLoginFormInputs = document.querySelectorAll('.login-forms-wrapper input.first')
+    const firstLoginFormInputs = document.querySelectorAll('.login-forms input.first')
 
     firstLoginFormInputs.forEach((input, index) => {
         if (index < 2) {
