@@ -178,9 +178,13 @@ function hideLogin(event) {
 const loginOptions = document.querySelectorAll('.login-options button');
 
 function setInitialLoginOption() {
-    loginOptions[0].className = 'chosen-option';
-    loginOptions[1].className = 'login-option';
-    loginOptions[2].className = 'login-option';
+    loginOptions.forEach((option, index) => {
+        if (index == 0) {
+            option.className = 'chosen-option';
+        } else {
+            option.className = 'login-option';
+        }
+    });
 
     setInitialLoginForm();
 }
