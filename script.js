@@ -10,11 +10,11 @@ function hideTopBanner() {
 const chosenRegionButton = document.querySelector('.chosen-region');
 const regionsWrapper = document.querySelector('.regions-wrapper');
 
-function showRegionsPopup() {
+function showRegions() {
     regionsWrapper.style.display = 'block';
 }
 
-function hideRegionsPopup(event) {
+function hideRegions(event) {
     if (event.target.classList.contains('close')) {
         regionsWrapper.style.display = 'none';
     }
@@ -398,8 +398,8 @@ function closeOnEsc() {
 
 topBannerButton.addEventListener('click', hideTopBanner);
 
-chosenRegionButton.addEventListener('click', showRegionsPopup);
-regionsWrapper.addEventListener('click', hideRegionsPopup);
+chosenRegionButton.addEventListener('click', showRegions);
+regionsWrapper.addEventListener('click', hideRegions);
 
 catalogButton.addEventListener('click', toggleCatalog);
 catalogNavButtons.forEach(button => button.addEventListener('mouseover', catalogNavButtonOn));
