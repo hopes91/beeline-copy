@@ -367,7 +367,7 @@ function activateSubmitLoginButton(input) {
 const eyeSVGs = document.querySelectorAll('.svg-wrapper.eye svg');
 
 function toggleEye(event) {
-    let clickedEye = event.target.closest('svg');
+    let clickedEye = event.currentTarget;
     const svgClosed = document.querySelector('.svg-wrapper.eye svg.closed');
     const svgOpened = document.querySelector('.svg-wrapper.eye svg.opened');
 
