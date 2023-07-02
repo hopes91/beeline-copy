@@ -64,13 +64,6 @@ function toggleCatalogBackground(catalogWrapper) {
     }
 }
 
-function displayInitialCatalogBlock() {
-    const initialBlock = document.querySelector('.content-block.initial');
-    initialBlock.style.display = 'block';
-
-    catalogNavButtonOff();
-}
-
 const catalogNavButtons = document.querySelectorAll('.small-navbar button');
 
 function catalogNavButtonOff() {
@@ -101,6 +94,13 @@ function showCatalogBlock(currentButton) {
 function hideCatalogBlocks() {
     const catalogBlocks = document.querySelectorAll('.big-navbar .content-block');
     catalogBlocks.forEach(block => block.style.display = 'none');
+}
+
+function displayInitialCatalogBlock() {
+    const initialBlock = document.querySelector('.content-block.initial');
+    initialBlock.style.display = 'block';
+
+    catalogNavButtonOff();
 }
 
 // search bar content
