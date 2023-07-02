@@ -262,7 +262,7 @@ function activateLoginInput(event) {
         setCaretPosition(input, findCaretPosition('phone'));
     } else if (placeholder.includes('Логин')) {
         input.value = loginValue;
-    } else if (placeholder.includes('Пароль')) {
+    } else {
         input.value = passwordValue;
     }
 }
