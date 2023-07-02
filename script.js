@@ -267,6 +267,17 @@ function activateLoginInput(event) {
     }
 }
 
+function deactivateLoginInput() {
+    loginInputs.forEach(input => {
+        if (input.value === '+7 ___ ___-__-__') {
+            input.value = '';
+
+            input.blur();
+            setCaretPosition(input, 3);
+        }
+    });
+}
+
 function setCaretPosition(input, position) {
     input.setSelectionRange(position, position);
 }
@@ -279,17 +290,6 @@ function findCaretPosition(inputType) {
     } else if (inputType === 'password') {
         return passwordValue.length;
     }
-}
-
-function deactivateLoginInput() {
-    loginInputs.forEach(input => {
-        if (input.value === '+7 ___ ___-__-__') {
-            input.value = '';
-
-            input.blur();
-            setCaretPosition(input, 3);
-        }
-    });
 }
 
 function setLoginValue(event) {
