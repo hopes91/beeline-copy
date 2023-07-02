@@ -359,7 +359,7 @@ function activateSubmitLoginButton(input) {
     if (input.placeholder.includes('+7')) {
         submitButtons[0].removeAttribute('disabled');
         submitButtons[1].removeAttribute('disabled');
-    } else if (input.placeholder.includes('Логин')) {
+    } else {
         submitButtons[2].removeAttribute('disabled');
     }
 }
