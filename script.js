@@ -273,7 +273,6 @@ function deactivateLoginInput() {
             input.value = '';
 
             input.blur();
-            setCaretPosition(input, 3);
         }
     });
 }
