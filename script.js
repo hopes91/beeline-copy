@@ -242,7 +242,7 @@ function autoActivateLoginInput() {
 
             input.focus();
             setCaretPosition(input, findCaretPosition('phone'));
-        } else if (index == 2) {
+        } else {
             input.value = loginValue;
 
             input.focus();
