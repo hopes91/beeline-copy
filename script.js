@@ -1,29 +1,29 @@
 // top yellow bar
 const topBannerButton = document.querySelector('.banner_top .banner-close');
 
-const hideTopBanner = () => {
+function hideTopBanner() {
     const topBanner = document.querySelector('.banner_top');
     topBanner.classList.add('height-zero');
-};
+}
 
 // regions popup
 const chosenRegionButton = document.querySelector('.chosen-region');
 const regionsWrapper = document.querySelector('.regions-wrapper');
 
-const showRegionsPopup = () => {
+function showRegionsPopup() {
     regionsWrapper.style.display = 'block';
-};
+}
 
-const hideRegionsPopup = event => {
+function hideRegionsPopup(event) {
     if (event.target.classList.contains('close')) {
         regionsWrapper.style.display = 'none';
     }
-};
+}
 
 // catalog content
 const catalogButton = document.querySelector('.catalog-button');
 
-const toggleCatalog = additionalInfo => {
+function toggleCatalog(additionalInfo) {
     const catalogWrapper = document.querySelector('.catalog-wrapper');
 
     if (catalogWrapper.style.display === 'block' || additionalInfo === 'close') {
@@ -37,9 +37,9 @@ const toggleCatalog = additionalInfo => {
 
     toggleCatalogButtonSVG(catalogWrapper);
     toggleCatalogBackground(catalogWrapper);
-};
+}
 
-const toggleCatalogButtonSVG = catalogWrapper => {
+function toggleCatalogButtonSVG(catalogWrapper) {
     const svgClosed = document.querySelector('.catalog-button svg.closed');
     const svgOpened = document.querySelector('.catalog-button svg.opened');
 
@@ -50,9 +50,9 @@ const toggleCatalogButtonSVG = catalogWrapper => {
         svgClosed.style.opacity = '1';
         svgOpened.style.opacity = '0';
     }
-};
+}
 
-const toggleCatalogBackground = catalogWrapper => {
+function toggleCatalogBackground(catalogWrapper) {
     const catalogBackground = document.querySelector('.catalog-background');
 
     if (catalogWrapper.style.display === 'block') {
@@ -62,30 +62,30 @@ const toggleCatalogBackground = catalogWrapper => {
         catalogBackground.style.display = 'none';
         catalogBackground.style.opacity = '0';
     }
-};
+}
 
-const displayInitialCatalogBlock = () => {
+function displayInitialCatalogBlock() {
     const initialBlock = document.querySelector('.content-block.initial');
     initialBlock.style.display = 'block';
 
     catalogNavButtonOff();
-};
+}
 
 const catalogNavButtons = document.querySelectorAll('.small-navbar button');
 
-const catalogNavButtonOff = () => {
+function catalogNavButtonOff() {
     catalogNavButtons.forEach(button => button.classList.remove('chosen-section'));
-};
+}
 
-const catalogNavButtonOn = event => {
+function catalogNavButtonOn(event) {
     catalogNavButtonOff();
 
     event.currentTarget.classList.add('chosen-section');
 
     showCatalogBlock(event.currentTarget.innerText);
-};
+}
 
-const showCatalogBlock = currentButton => {
+function showCatalogBlock(currentButton) {
     hideCatalogBlocks();
 
     const catalogBlocks = document.querySelectorAll('.big-navbar .content-block');
@@ -96,103 +96,103 @@ const showCatalogBlock = currentButton => {
             break;
         }
     }
-};
+}
 
-const hideCatalogBlocks = () => {
+function hideCatalogBlocks() {
     const catalogBlocks = document.querySelectorAll('.big-navbar .content-block');
     catalogBlocks.forEach(block => block.style.display = 'none');
-};
+}
 
 // search bar content
 const searchBar = document.getElementById('search-bar');
 
-const hideCatalogButton = () => {
+function hideCatalogButton() {
     catalogButton.style.display = 'none';
 
     toggleCatalog('close');
     hideButtonsToTheRight();
-};
+}
 
-const hideButtonsToTheRight = () => {
+function hideButtonsToTheRight() {
     const buttonsToTheRight = document.querySelector('.bar_bottom .right');
     buttonsToTheRight.style.display = 'none';
 
     showHiddenButtons();
-};
+}
 
-const showHiddenButtons = () => {
+function showHiddenButtons() {
     const hiddenButtons = document.querySelector('.hidden-buttons');
     hiddenButtons.style.display = 'flex';
 
     showSearchInfo();
-};
+}
 
-const showSearchInfo = () => {
+function showSearchInfo() {
     const searchInfo = document.querySelector('.search-wrapper');
     searchInfo.style.display = 'block';
-};
+}
 
 const closeSearchBarButton = document.getElementById('close-search');
 
-const hideSearchInfo = () => {
+function hideSearchInfo() {
     const searchInfo = document.querySelector('.search-wrapper');
     searchInfo.style.display = 'none';
 
     hideHiddenButtons();
-};
+}
 
-const hideHiddenButtons = () => {
+function hideHiddenButtons() {
     const hiddenButtons = document.querySelector('.hidden-buttons');
     hiddenButtons.style.display = 'none';
 
     showCatalogButton();
-};
+}
 
-const showCatalogButton = () => {
+function showCatalogButton() {
     catalogButton.style.display = 'inline-block';
 
     showButtonsToTheRight();
-};
+}
 
-const showButtonsToTheRight = () => {
+function showButtonsToTheRight() {
     const buttonsToTheRight = document.querySelector('.bar_bottom .right');
     buttonsToTheRight.style.display = 'flex';
-};
+}
 
 // login popup
 const loginWrapper = document.querySelector('.login-wrapper');
 const loginButton = document.getElementById('login-button');
 
-const showLogin = () => {
+function showLogin() {
     loginWrapper.style.display = 'flex';
-};
+}
 
-const hideLogin = event => {
+function hideLogin(event) {
     if (event.target.classList.contains('close')) {
         loginWrapper.style.display = 'none';
 
         setInitialLoginOption();
     }
-};
+}
 
 const loginOptions = document.querySelectorAll('.login-options button');
 
-const setInitialLoginOption = () => {
+function setInitialLoginOption() {
     loginOptions[0].className = 'chosen-option';
     loginOptions[1].className = 'login-option';
     loginOptions[2].className = 'login-option';
 
     setInitialLoginForm();
-};
+}
 
-const setInitialLoginForm = () => {
+function setInitialLoginForm() {
     const loginForms = document.querySelectorAll('.login-forms form');
     loginForms[0].className = 'chosen-form';
     loginForms[1].className = 'login-form';
     loginForms[2].className = 'login-form';
-};
+}
 
-const changeLoginOption = event => {
+function changeLoginOption(event) {
     loginOptions.forEach(option => option.className = 'login-option');
 
     let loginOption = event.target.closest('button');
@@ -202,9 +202,9 @@ const changeLoginOption = event => {
 
         showChosenLoginForm(loginOption.id);
     }
-};
+}
 
-const showChosenLoginForm = chosenLoginID => {
+function showChosenLoginForm(chosenLoginID) {
     const loginForms = document.querySelectorAll('.login-forms form');
     loginForms.forEach(form => form.className = 'login-form');
 
@@ -217,14 +217,14 @@ const showChosenLoginForm = chosenLoginID => {
     }
 
     autoActivateLoginInput();
-};
+}
 
 const loginInputs = document.querySelectorAll('.login-forms input');
 let phoneValue = '+7 ___ ___-__-__';
 let loginValue = '';
 let passwordValue = '';
 
-const autoActivateLoginInput = () => {
+function autoActivateLoginInput() {
     const firstLoginInputs = document.querySelectorAll('.login-forms input.first')
 
     firstLoginInputs.forEach((input, index) => {
@@ -240,9 +240,9 @@ const autoActivateLoginInput = () => {
             setCaretPosition(input, findCaretPosition('login'));
         }
     });
-};
+}
 
-const activateLoginInput = event => {
+function activateLoginInput(event) {
     let input = event.target;
     let placeholder = event.target.placeholder;
 
@@ -256,13 +256,13 @@ const activateLoginInput = event => {
     } else if (placeholder.includes('Пароль')) {
         input.value = passwordValue;
     }
-};
+}
 
-const setCaretPosition = (input, position) => {
+function setCaretPosition(input, position) {
     input.setSelectionRange(position, position);
-};
+}
 
-const findCaretPosition = inputType => {
+function findCaretPosition(inputType) {
     if (inputType === 'phone') {
         return phoneValue.search(/_/);
     } else if (inputType === 'login') {
@@ -270,9 +270,9 @@ const findCaretPosition = inputType => {
     } else if (inputType === 'password') {
         return passwordValue.length;
     }
-};
+}
 
-const deactivateLoginInput = () => {
+function deactivateLoginInput() {
     loginInputs.forEach(input => {
         if (input.value === '+7 ___ ___-__-__') {
             input.value = '';
@@ -281,9 +281,9 @@ const deactivateLoginInput = () => {
             setCaretPosition(input, 3);
         }
     });
-};
+}
 
-const setLoginValue = event => {
+function setLoginValue(event) {
     if (event.target.placeholder.includes('+7')) {
         if (event.inputType === 'deleteContentBackward') {
             deleteNumValues(event);
@@ -295,9 +295,9 @@ const setLoginValue = event => {
     }
     
     activateSubmitLoginButton(event.target);
-};
+}
 
-const setNumValues = event => {
+function setNumValues(event) {
     let input = event.target;
 
     if (!/\d/.test(event.data)) return;
@@ -313,9 +313,9 @@ const setNumValues = event => {
             input.value = phoneValue;
         }
     }
-};
+}
 
-const deleteNumValues = event => {
+function deleteNumValues(event) {
     let input = event.target;
     let reversedPhone = phoneValue.split('').reverse().join('');
 
@@ -333,9 +333,9 @@ const deleteNumValues = event => {
             break;
         }
     }
-};
+}
 
-const setNumLetCharValues = event => {
+function setNumLetCharValues(event) {
     let input = event.target;
 
     if (input.placeholder.includes('Логин')) {
@@ -343,11 +343,11 @@ const setNumLetCharValues = event => {
     } else if (input.placeholder.includes('Пароль')) {
         passwordValue = input.value;
     }
-};
+}
 
 const eyeSVGs = document.querySelectorAll('.svg-wrapper.eye svg');
 
-const toggleEye = event => {
+function toggleEye(event) {
     let clickedEye = event.target.closest('svg');
     const svgClosed = document.querySelector('.svg-wrapper.eye svg.closed');
     const svgOpened = document.querySelector('.svg-wrapper.eye svg.opened');
@@ -361,15 +361,15 @@ const toggleEye = event => {
     }
 
     togglePassword();
-};
+}
 
-const togglePassword = () => {
+function togglePassword() {
     const passwordInput = document.getElementById('password');
     let type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
     passwordInput.setAttribute('type', type);
-};
+}
 
-const activateSubmitLoginButton = input => {
+function activateSubmitLoginButton(input) {
     const submitButtons = document.querySelectorAll('.login-submit');
 
     if (input.placeholder.includes('+7')) {
@@ -378,22 +378,23 @@ const activateSubmitLoginButton = input => {
     } else if (input.placeholder.includes('Логин')) {
         submitButtons[2].removeAttribute('disabled');
     }
-};
+}
 
-const manageKeyDown = event => {
+function manageKeyDown(event) {
     if (event.key === 'Escape') {
         closeOnEsc();
     }
-};
+}
 
-const closeOnEsc = () => {
+function closeOnEsc() {
     const popups = document.querySelectorAll('.popup');
     popups.forEach(popup => popup.style.display = 'none');
 
     toggleCatalog('close');
     hideSearchInfo();
     setInitialLoginOption();
-};
+}
+
 
 topBannerButton.addEventListener('click', hideTopBanner);
 
