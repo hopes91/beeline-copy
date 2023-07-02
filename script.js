@@ -202,14 +202,14 @@ function setInitialLoginForm() {
 }
 
 function changeLoginOption(event) {
+    let chosenOption = event.currentTarget;
+
     loginOptions.forEach(option => option.className = 'login-option');
 
-    let loginOption = event.target.closest('button');
+    if (chosenOption.className === 'login-option') {
+        chosenOption.className = 'chosen-option';
 
-    if (loginOption.className === 'login-option') {
-        loginOption.className = 'chosen-option';
-
-        showChosenLoginForm(loginOption.id);
+        showChosenLoginForm(chosenOption.id);
     }
 }
 
