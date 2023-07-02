@@ -353,6 +353,17 @@ function setNumLetCharValues(event) {
     }
 }
 
+function activateSubmitLoginButton(input) {
+    const submitButtons = document.querySelectorAll('.login-submit');
+
+    if (input.placeholder.includes('+7')) {
+        submitButtons[0].removeAttribute('disabled');
+        submitButtons[1].removeAttribute('disabled');
+    } else if (input.placeholder.includes('Логин')) {
+        submitButtons[2].removeAttribute('disabled');
+    }
+}
+
 const eyeSVGs = document.querySelectorAll('.svg-wrapper.eye svg');
 
 function toggleEye(event) {
@@ -375,17 +386,6 @@ function togglePassword() {
     const passwordInput = document.getElementById('password');
     let type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
     passwordInput.setAttribute('type', type);
-}
-
-function activateSubmitLoginButton(input) {
-    const submitButtons = document.querySelectorAll('.login-submit');
-
-    if (input.placeholder.includes('+7')) {
-        submitButtons[0].removeAttribute('disabled');
-        submitButtons[1].removeAttribute('disabled');
-    } else if (input.placeholder.includes('Логин')) {
-        submitButtons[2].removeAttribute('disabled');
-    }
 }
 
 function manageKeyDown(event) {
