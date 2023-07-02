@@ -191,9 +191,14 @@ function setInitialLoginOption() {
 
 function setInitialLoginForm() {
     const loginForms = document.querySelectorAll('.login-forms form');
-    loginForms[0].className = 'chosen-form';
-    loginForms[1].className = 'login-form';
-    loginForms[2].className = 'login-form';
+    
+    loginForms.forEach((form, index) => {
+        if (index == 0) {
+            form.className = 'chosen-form';
+        } else {
+            form.className = 'login-form';
+        }
+    });
 }
 
 function changeLoginOption(event) {
