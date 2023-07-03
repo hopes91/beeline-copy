@@ -406,22 +406,18 @@ function closeOnEsc() {
 }
 
 function handleArrowMovesInNumValue(event) {
-    if (event.key === 'ArrowLeft') {
-        if (phoneValue.startsWith('+7 _')) {
-            event.preventDefault();
-        } else if (/^\+7\s\d+/.test(phoneValue)) {
+    if (phoneValue.startsWith('+7 _')) {
+        event.preventDefault();
+    } else if (/^\+7\s\d+/.test(phoneValue)) {
+        if (event.key === 'ArrowLeft') {
             let caretPosition = findCaretPosition(event.target) - 1;
-
+    
             if (caretPosition == 2) {
                 event.preventDefault();
             }
-        }
-    } else if (event.key === 'ArrowRight') {
-        if (phoneValue.startsWith('+7 _')) {
-            event.preventDefault();
-        } else if (/^\+7\s\d+/.test(phoneValue)) {
+        } else if (event.key === 'ArrowRight') {
             let caretPosition = findCaretPosition(event.target);
-
+    
             if (caretPosition == (phoneValue.length - findCharIndex('reversed'))) {
                 event.preventDefault();
             }
