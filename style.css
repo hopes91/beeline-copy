@@ -51,8 +51,8 @@ header * {
 }
 
 .no-scroll {
-    overflow-y: hidden;
-    position: fixed;
+    height: 100vh;
+    overflow: hidden;
 }
 
 .header-content {
