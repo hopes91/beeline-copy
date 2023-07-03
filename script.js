@@ -241,7 +241,7 @@ function autoActivateLoginInput() {
             input.value = phoneValue;
 
             input.focus();
-            setCaretPosition(input, findUnderscoreIndex(phoneValue));
+            setCaretPosition(input, findCharIndex());
         } else {
             input.value = loginValue;
 
@@ -280,8 +280,8 @@ function setCaretPosition(input, position) {
     input.setSelectionRange(position, position);
 }
 
-function findUnderscoreIndex(value) {
-    return value.search(/_/);
+function findCharIndex() {
+        return phoneValue.search(/_/);
 }
 
 function setLoginValue(event) {
