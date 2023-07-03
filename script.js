@@ -241,7 +241,7 @@ function autoActivateLoginInput() {
             input.value = phoneValue;
 
             input.focus();
-            setCaretPosition(input, findCharIndex());
+            setCaretPosition(input, findCharIndex('phone'));
         } else {
             input.value = loginValue;
 
@@ -280,8 +280,13 @@ function setCaretPosition(input, position) {
     input.setSelectionRange(position, position);
 }
 
-function findCharIndex() {
+function findCharIndex(value) {
+    if (value === 'phone') {
         return phoneValue.search(/_/);
+    } else {
+        let reversedPhone = phoneValue.split('').reverse().join('');
+        return reversedPhone.search(/\d/);
+    }
 }
 
 function setLoginValue(event) {
