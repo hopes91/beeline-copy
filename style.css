@@ -39,11 +39,11 @@ p {
 }
 
 header {
+    left: 0;
     position: relative;
-}
-
-header * {
-    outline-color: #FFCC00;
+    top: 0;
+    width: 100%;
+    z-index: 10;
 }
 
 .color-red {
@@ -58,11 +58,6 @@ header * {
 .header-content {
     background-color: #ffffff;
     border-bottom: 1px solid #dfe0e5;
-    /* height: 161px;
-    left: 0;
-    position: fixed;
-    top: 0;
-    width: 100%; */
     position: relative;
     z-index: 10;
 }

@@ -464,6 +464,20 @@ function findCaretPosition(input) {
     return input.selectionStart;
 }
 
+function toggleHeadersPosition() {
+    const header = document.querySelector('header');
+    const barTop = document.querySelector('.bar_top');
+    let y = window.scrollY;
+    
+    if (y > 0) {
+        header.style.position = 'fixed';
+        barTop.style.display = 'none';
+    } else {
+        header.style.position = 'relative';
+        barTop.style.display = 'flex';
+    }
+}
+
 topBannerButton.addEventListener('click', hideTopBanner);
 
 chosenRegionButton.addEventListener('click', showRegions);
@@ -486,3 +500,4 @@ loginInputs.forEach(input => input.addEventListener('input', setLoginValue));
 eyeSVGs.forEach(svg => svg.addEventListener('click', toggleEye));
 
 window.addEventListener('keydown', manageKeyDown);
+window.addEventListener('scroll', toggleHeadersPosition);
