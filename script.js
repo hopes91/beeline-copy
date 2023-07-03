@@ -389,6 +389,10 @@ function togglePassword() {
 function manageKeyDown(event) {
     if (event.key === 'Escape') {
         closeOnEsc();
+    } else if (event.key === 'ArrowLeft' || event.key === 'ArrowRight') {
+        if (loginWrapper.style.display === 'flex') {
+            handleArrowMovesInNumValue(event);
+        }
     }
 }
 
@@ -401,6 +405,33 @@ function closeOnEsc() {
     setInitialLoginOption();
 }
 
+function handleArrowMovesInNumValue(event) {
+    if (event.key === 'ArrowLeft') {
+        if (phoneValue.startsWith('+7 _')) {
+            event.preventDefault();
+        } else if (/^\+7\s\d+/.test(phoneValue)) {
+            let caretPosition = findCaretPosition(event.target) - 1;
+
+            if (caretPosition == 2) {
+                event.preventDefault();
+            }
+        }
+    } else if (event.key === 'ArrowRight') {
+        if (phoneValue.startsWith('+7 _')) {
+            event.preventDefault();
+        } else if (/^\+7\s\d+/.test(phoneValue)) {
+            let caretPosition = findCaretPosition(event.target);
+
+            if (caretPosition == (phoneValue.length - findCharIndex('reversed'))) {
+                event.preventDefault();
+            }
+        }
+    }
+}
+
+function findCaretPosition(input) {
+    return input.selectionStart;
+}
 
 topBannerButton.addEventListener('click', hideTopBanner);
 
