@@ -246,7 +246,6 @@ function autoActivateLoginInput() {
             input.value = loginValue;
 
             input.focus();
-            setCaretPosition(input, findCaretPosition('login'));
         }
     });
 }
