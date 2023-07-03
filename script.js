@@ -268,7 +268,7 @@ function activateLoginInput(event) {
 
 function deactivateLoginInput() {
     loginInputs.forEach(input => {
-        if (input.value === '+7 ___ ___-__-__') {
+        if (phoneValue.startsWith('+7 _')) {
             input.value = '';
 
             input.blur();
