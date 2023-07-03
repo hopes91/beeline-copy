@@ -239,12 +239,15 @@ function autoActivateLoginInput() {
     firstLoginInputs.forEach((input, index) => {
         if (index < 2) {
             input.value = phoneValue;
-
             input.focus();
-            setCaretPosition(input, findCharIndex('phone'));
+
+            if (phoneValue.startsWith('+7 _')) {
+                setCaretPosition(input, findCharIndex('underscore'));
+            } else {
+                setCaretPosition(input, findCharIndex('digit'));
+            }
         } else {
             input.value = loginValue;
-
             input.focus();
         }
     });
