@@ -121,6 +121,10 @@ header * {
     z-index: 11;
 }
 
+.navbar_top * {
+    outline-color: #FFCC00;
+}
+
 .bar_top {
     display: flex;
     justify-content: space-between;
