@@ -241,7 +241,7 @@ function autoActivateLoginInput() {
             input.value = phoneValue;
 
             input.focus();
-            setCaretPosition(input, findCaretPosition('phone'));
+            setCaretPosition(input, findUnderscoreIndex(phoneValue));
         } else {
             input.value = loginValue;
 
@@ -280,14 +280,8 @@ function setCaretPosition(input, position) {
     input.setSelectionRange(position, position);
 }
 
-function findCaretPosition(inputType) {
-    if (inputType === 'phone') {
-        return phoneValue.search(/_/);
-    } else if (inputType === 'login') {
-        return loginValue.length;
-    } else if (inputType === 'password') {
-        return passwordValue.length;
-    }
+function findUnderscoreIndex(value) {
+    return value.search(/_/);
 }
 
 function setLoginValue(event) {
