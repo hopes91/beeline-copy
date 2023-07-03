@@ -259,9 +259,23 @@ function activateLoginInput(event) {
 
     if (placeholder.includes('+7')) {
         input.value = phoneValue;
-
         input.focus();
-        setCaretPosition(input, findCaretPosition('phone'));
+
+        if (phoneValue.startsWith('+7 _')) {
+            setCaretPosition(input, findCharIndex('underscore'));
+        } else {
+            let startChar = 3;
+            let endChar = findCharIndex('digit');
+            let caretPosition = findCaretPosition(input);
+
+            if (caretPosition >= startChar && caretPosition <= endChar) {
+                setCaretPosition(input, caretPosition);
+            } else if (caretPosition < startChar) {
+                setCaretPosition(input, startChar);
+            } else {
+                setCaretPosition(input, findCharIndex('digit'));
+            }
+        }
     } else if (placeholder.includes('Логин')) {
         input.value = loginValue;
     } else {
@@ -273,7 +287,6 @@ function deactivateLoginInput() {
     loginInputs.forEach(input => {
         if (phoneValue.startsWith('+7 _')) {
             input.value = '';
-
             input.blur();
         }
     });
@@ -284,11 +297,11 @@ function setCaretPosition(input, position) {
 }
 
 function findCharIndex(value) {
-    if (value === 'phone') {
+    if (value === 'underscore') {
         return phoneValue.search(/_/);
     } else {
         let reversedPhone = phoneValue.split('').reverse().join('');
-        return reversedPhone.search(/\d/);
+        return phoneValue.length - reversedPhone.search(/\d/);
     }
 }
 
@@ -332,7 +345,7 @@ function deleteNumValues(event) {
         if (phoneValue.startsWith('+7 _')) {
             input.value = phoneValue;
 
-            setCaretPosition(input, 3);
+            setCaretPosition(input, findCharIndex('underscore'));
         } else if (/\d/.test(phoneValue[i])) {
             reversedPhone = reversedPhone.replace(reversedPhone[(phoneValue.length - 1) - i], '_');
             phoneValue = reversedPhone.split('').reverse().join('');
@@ -421,7 +434,7 @@ function handleArrowMovesInNumValue(event) {
         } else if (event.key === 'ArrowRight') {
             let caretPosition = findCaretPosition(event.target);
     
-            if (caretPosition == (phoneValue.length - findCharIndex('reversed'))) {
+            if (caretPosition == findCharIndex('digit')) {
                 event.preventDefault();
             }
         }
