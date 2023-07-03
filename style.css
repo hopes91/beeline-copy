@@ -50,6 +50,11 @@ header * {
     color: #f45151;
 }
 
+.no-scroll {
+    overflow-y: hidden;
+    position: fixed;
+}
+
 .header-content {
     background-color: #ffffff;
     border-bottom: 1px solid #dfe0e5;

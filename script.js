@@ -23,16 +23,19 @@ function hideRegions(event) {
 // catalog content
 const catalogButton = document.querySelector('.catalog-button');
 
-function toggleCatalog(additionalInfo) {
+function toggleCatalog(action) {
     const catalogWrapper = document.querySelector('.catalog-wrapper');
 
-    if (catalogWrapper.style.display === 'block' || additionalInfo === 'close') {
+    if (catalogWrapper.style.display === 'block' || action === 'close') {
         catalogWrapper.style.display = 'none';
 
         hideCatalogBlocks();
         displayInitialCatalogBlock();
+        toggleBodyScroll();
     } else {
         catalogWrapper.style.display = 'block';
+
+        toggleBodyScroll('no-scroll');
     }
 
     toggleCatalogButtonSVG(catalogWrapper);
@@ -130,6 +133,8 @@ function showHiddenButtons() {
 function showSearchInfo() {
     const searchInfo = document.querySelector('.search-wrapper');
     searchInfo.style.display = 'block';
+
+    toggleBodyScroll('no-scroll');
 }
 
 const closeSearchBarButton = document.getElementById('close-search');
@@ -139,6 +144,7 @@ function hideSearchInfo() {
     searchInfo.style.display = 'none';
 
     hideHiddenButtons();
+    toggleBodyScroll();
 }
 
 function hideHiddenButtons() {
@@ -165,6 +171,8 @@ const loginButton = document.getElementById('login-button');
 
 function showLogin() {
     loginWrapper.style.display = 'flex';
+
+    toggleBodyScroll('no-scroll');
 }
 
 function hideLogin(event) {
@@ -172,6 +180,17 @@ function hideLogin(event) {
         loginWrapper.style.display = 'none';
 
         setInitialLoginOption();
+        toggleBodyScroll();
+    }
+}
+
+function toggleBodyScroll(action) {
+    const body = document.querySelector('body');
+    
+    if (action === 'no-scroll') {
+        body.classList.add('no-scroll');
+    } else {
+        body.classList.remove('no-scroll');
     }
 }
 
