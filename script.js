@@ -67,7 +67,7 @@ function toggleCatalogBackground(catalogWrapper) {
     }
 }
 
-const catalogNavButtons = document.querySelectorAll('.small-navbar button');
+const catalogNavButtons = document.querySelectorAll('.catalog .small-navbar button');
 
 function catalogNavButtonOff() {
     catalogNavButtons.forEach(button => button.classList.remove('chosen-section'));
