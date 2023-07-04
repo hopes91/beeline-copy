@@ -1260,7 +1260,15 @@ main {
 }
 
 .search .small-navbar-wrapper {
-    width: 190px;
+    width: 225px;
+}
+
+.search .small-navbar li {
+    margin-bottom: 2px;
+}
+
+.search .small-navbar .title {
+    margin: 0 0 8px 0;
 }
 
 .search .small-navbar button {
@@ -1277,5 +1285,5 @@ main {
 
 .search .small-navbar .svg-wrapper {
     height: 20px;
-    margin-right: 8px;
+    margin-right: 12px;
 }
