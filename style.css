@@ -577,7 +577,6 @@ header {
 }
 
 .small-navbar-wrapper {
-    border-right: 1px solid #dfe0e5;
     box-sizing: border-box;
     height: 80vh;
     overflow-x: auto;
@@ -629,6 +628,7 @@ header {
 }
 
 .big-navbar-wrapper {
+    border-left: 1px solid #dfe0e5;
     height: 80vh;
     overflow-x: auto;
     padding-bottom: 32px;
