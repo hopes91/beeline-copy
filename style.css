@@ -316,11 +316,11 @@ header {
     padding: 12px 16px;
 }
 
-.navbar-wrapper_right li {
+.wrapper_right li {
     margin-right: 32px;
 }
 
-.navbar-wrapper_right li:last-child {
+.wrapper_right li:last-child {
     margin-right: 0;
 }
 
