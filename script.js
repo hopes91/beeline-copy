@@ -16,7 +16,7 @@ function hideTopBanner() {
     topBanner.classList.add('height-zero');
 }
 
-// regions popup
+// regions
 const chosenRegionButton = document.querySelector('.chosen-region');
 const regionsWrapper = document.querySelector('.regions-wrapper');
 
@@ -30,7 +30,7 @@ function hideRegions(event) {
     }
 }
 
-// catalog content
+// catalog
 const catalogButton = document.querySelector('.catalog-button');
 
 function toggleCatalog(action) {
@@ -116,7 +116,7 @@ function displayInitialCatalogBlock() {
     catalogNavButtonOff();
 }
 
-// search bar content
+// search
 const searchBar = document.getElementById('search-bar');
 
 function hideCatalogButton() {
@@ -200,7 +200,7 @@ function clearSearch() {
     hideClearSearchButton();
 }
 
-// login popup
+// login
 const loginWrapper = document.querySelector('.login-wrapper');
 const loginButton = document.getElementById('login-button');
 
