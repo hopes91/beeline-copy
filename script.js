@@ -453,7 +453,7 @@ function manageKeyDown(event) {
         closeOnEsc();
     } else if (event.key === 'ArrowLeft' || event.key === 'ArrowRight') {
         if (loginWrapper.style.display === 'flex') {
-            handleArrowMovesInNumValue(event);
+            handleArrowMoves(event);
         }
     }
 }
@@ -467,7 +467,9 @@ function closeOnEsc() {
     setInitialLoginOption();
 }
 
-function handleArrowMovesInNumValue(event) {
+function handleArrowMoves(event) {
+    if (!event.target.placeholder.startsWith('+7')) return;
+
     if (phoneValue.startsWith('+7 _')) {
         event.preventDefault();
     } else if (/^\+7\s\d+/.test(phoneValue)) {
