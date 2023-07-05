@@ -1,3 +1,13 @@
+function toggleBodyScroll(action) {
+    const body = document.querySelector('body');
+    
+    if (action === 'no-scroll') {
+        body.classList.add('no-scroll');
+    } else {
+        body.classList.remove('no-scroll');
+    }
+}
+
 // top yellow bar
 const topBannerButton = document.querySelector('.banner_top .banner-close');
 
@@ -206,16 +216,6 @@ function hideLogin(event) {
 
         setInitialLoginOption();
         toggleBodyScroll();
-    }
-}
-
-function toggleBodyScroll(action) {
-    const body = document.querySelector('body');
-    
-    if (action === 'no-scroll') {
-        body.classList.add('no-scroll');
-    } else {
-        body.classList.remove('no-scroll');
     }
 }
 
