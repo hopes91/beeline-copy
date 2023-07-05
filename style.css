@@ -400,6 +400,7 @@ header {
 }
 
 .search-bar-wrapper {
+    position: relative;
     width: 100%;
 }
 
@@ -423,6 +424,13 @@ header {
     font-size: 14px;
     padding: 10px 40px;
     width: 100%;
+}
+
+#clear-search {
+    display: none;
+    position: absolute;
+    right: 11px;
+    top: 11px;
 }
 
 .hidden-buttons {

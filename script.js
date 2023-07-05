@@ -165,6 +165,30 @@ function showButtonsToTheRight() {
     buttonsToTheRight.style.display = 'flex';
 }
 
+const clearSearchButton = document.getElementById('clear-search');
+
+function manageClearSearchButton(event) {
+    if (event.target.value === '') {
+        hideClearSearchButton();
+    } else {
+        showClearSearchButton();
+    }
+}
+
+function showClearSearchButton() {
+    clearSearchButton.style.display = 'block';
+}
+
+function hideClearSearchButton() {
+    clearSearchButton.style.display = 'none';
+}
+
+function clearSearch() {
+    searchBar.value = '';
+
+    hideClearSearchButton();
+}
+
 // login popup
 const loginWrapper = document.querySelector('.login-wrapper');
 const loginButton = document.getElementById('login-button');
@@ -489,6 +513,8 @@ catalogNavButtons.forEach(button => button.addEventListener('mouseover', catalog
 searchBar.addEventListener('focus', hideCatalogButton);
 searchBar.addEventListener('click', hideCatalogButton);
 closeSearchBarButton.addEventListener('click', hideSearchInfo);
+searchBar.addEventListener('input', manageClearSearchButton);
+clearSearchButton.addEventListener('click', clearSearch);
 
 loginButton.addEventListener('click', showLogin);
 loginWrapper.addEventListener('click', hideLogin);
