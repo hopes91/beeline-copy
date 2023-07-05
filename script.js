@@ -143,6 +143,7 @@ function hideSearchInfo() {
     const searchInfo = document.querySelector('.search-wrapper');
     searchInfo.style.display = 'none';
 
+    clearSearch();
     hideHiddenButtons();
     toggleBodyScroll();
 }
