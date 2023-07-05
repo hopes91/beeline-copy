@@ -245,7 +245,7 @@ function setInitialLoginForm() {
 }
 
 function changeLoginOption(event) {
-    let chosenOption = event.currentTarget;
+    const chosenOption = event.currentTarget;
 
     loginOptions.forEach(option => option.className = 'login-option');
 
@@ -297,8 +297,8 @@ function autoActivateLoginInput() {
 }
 
 function activateLoginInput(event) {
-    let input = event.target;
-    let placeholder = event.target.placeholder;
+    const input = event.target;
+    const placeholder = event.target.placeholder;
 
     if (placeholder.includes('+7')) {
         input.value = phoneValue;
@@ -307,9 +307,9 @@ function activateLoginInput(event) {
         if (phoneValue.startsWith('+7 _')) {
             setCaretPosition(input, findCharIndex('underscore'));
         } else {
-            let startChar = 3;
-            let endChar = findCharIndex('digit');
-            let caretPosition = findCaretPosition(input);
+            const startChar = 3;
+            const endChar = findCharIndex('digit');
+            const caretPosition = findCaretPosition(input);
 
             if (caretPosition >= startChar && caretPosition <= endChar) {
                 setCaretPosition(input, caretPosition);
@@ -343,7 +343,7 @@ function findCharIndex(value) {
     if (value === 'underscore') {
         return phoneValue.search(/_/);
     } else {
-        let reversedPhone = phoneValue.split('').reverse().join('');
+        const reversedPhone = phoneValue.split('').reverse().join('');
         return phoneValue.length - reversedPhone.search(/\d/);
     }
 }
@@ -363,7 +363,7 @@ function setLoginValue(event) {
 }
 
 function setNumValues(event) {
-    let input = event.target;
+    const input = event.target;
 
     if (!/\d/.test(event.data)) return;
 
@@ -381,7 +381,7 @@ function setNumValues(event) {
 }
 
 function deleteNumValues(event) {
-    let input = event.target;
+    const input = event.target;
     let reversedPhone = phoneValue.split('').reverse().join('');
 
     for (let i = phoneValue.length - 1; i >= 3; i--) {
@@ -401,7 +401,7 @@ function deleteNumValues(event) {
 }
 
 function setNumLetCharValues(event) {
-    let input = event.target;
+    const input = event.target;
 
     if (input.placeholder.includes('Логин')) {
         loginValue = input.value;
@@ -426,7 +426,7 @@ const eyeSVGs = document.querySelectorAll('.svg-wrapper.eye svg');
 function toggleEye(event) {
     const svgClosed = document.querySelector('.svg-wrapper.eye svg.closed');
     const svgOpened = document.querySelector('.svg-wrapper.eye svg.opened');
-    let clickedEye = event.currentTarget;
+    const clickedEye = event.currentTarget;
 
     if (clickedEye.classList.value === 'closed') {
         svgClosed.style.display = 'none';
@@ -441,7 +441,7 @@ function toggleEye(event) {
 
 function togglePassword() {
     const passwordInput = document.getElementById('password');
-    let type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+    const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
     passwordInput.setAttribute('type', type);
 }
 
@@ -469,13 +469,13 @@ function handleArrowMovesInNumValue(event) {
         event.preventDefault();
     } else if (/^\+7\s\d+/.test(phoneValue)) {
         if (event.key === 'ArrowLeft') {
-            let caretPosition = findCaretPosition(event.target) - 1;
+            const caretPosition = findCaretPosition(event.target) - 1;
     
             if (caretPosition == 2) {
                 event.preventDefault();
             }
         } else if (event.key === 'ArrowRight') {
-            let caretPosition = findCaretPosition(event.target);
+            const caretPosition = findCaretPosition(event.target);
     
             if (caretPosition == findCharIndex('digit')) {
                 event.preventDefault();
@@ -491,7 +491,7 @@ function findCaretPosition(input) {
 function toggleHeadersPosition() {
     const header = document.querySelector('header');
     const barTop = document.querySelector('.bar_top');
-    let y = window.scrollY;
+    const y = window.scrollY;
     
     if (y > 0) {
         header.style.position = 'fixed';
