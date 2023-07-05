@@ -269,7 +269,7 @@ function showChosenLoginForm(chosenLoginID) {
         loginForms[2].className = 'chosen-form';
     }
 
-    autoActivateLoginInput();
+    autoFocusLoginInput();
 }
 
 const loginInputs = document.querySelectorAll('.login-forms input');
@@ -277,7 +277,7 @@ let phoneValue = '+7 ___ ___-__-__';
 let loginValue = '';
 let passwordValue = '';
 
-function autoActivateLoginInput() {
+function autoFocusLoginInput() {
     const firstLoginInputs = document.querySelectorAll('.login-forms input.first');
 
     firstLoginInputs.forEach((input, index) => {
@@ -297,7 +297,7 @@ function autoActivateLoginInput() {
     });
 }
 
-function activateLoginInput(event) {
+function focusLoginInput(event) {
     const input = event.target;
     const placeholder = event.target.placeholder;
 
@@ -327,7 +327,7 @@ function activateLoginInput(event) {
     }
 }
 
-function deactivateLoginInput() {
+function blurLoginInput() {
     const phoneLoginInputs = document.querySelectorAll('.login-forms input.num');
 
     phoneLoginInputs.forEach(input => {
@@ -522,9 +522,9 @@ clearSearchButton.addEventListener('click', clearSearch);
 loginButton.addEventListener('click', showLogin);
 loginWrapper.addEventListener('click', hideLogin);
 loginOptions.forEach(option => option.addEventListener('click', changeLoginOption));
-loginInputs.forEach(input => input.addEventListener('focus', activateLoginInput));
-loginInputs.forEach(input => input.addEventListener('click', activateLoginInput));
-loginInputs.forEach(input => input.addEventListener('blur', deactivateLoginInput));
+loginInputs.forEach(input => input.addEventListener('focus', focusLoginInput));
+loginInputs.forEach(input => input.addEventListener('click', focusLoginInput));
+loginInputs.forEach(input => input.addEventListener('blur', blurLoginInput));
 loginInputs.forEach(input => input.addEventListener('input', setLoginValue));
 eyeSVGs.forEach(svg => svg.addEventListener('click', toggleEye));
 
