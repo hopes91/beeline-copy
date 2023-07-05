@@ -84,7 +84,7 @@ function catalogNavButtonOn(event) {
 function showCatalogBlock(currentButton) {
     hideCatalogBlocks();
 
-    const catalogBlocks = document.querySelectorAll('.big-navbar .content-block');
+    const catalogBlocks = document.querySelectorAll('.catalog .content-block');
 
     for (let block of catalogBlocks) {
         if (currentButton === block.childNodes[1].innerText) {
@@ -95,12 +95,12 @@ function showCatalogBlock(currentButton) {
 }
 
 function hideCatalogBlocks() {
-    const catalogBlocks = document.querySelectorAll('.big-navbar .content-block');
+    const catalogBlocks = document.querySelectorAll('.catalog .content-block');
     catalogBlocks.forEach(block => block.style.display = 'none');
 }
 
 function displayInitialCatalogBlock() {
-    const initialBlock = document.querySelector('.content-block.initial');
+    const initialBlock = document.querySelector('.catalog .content-block.initial');
     initialBlock.style.display = 'block';
 
     catalogNavButtonOff();
