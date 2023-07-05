@@ -405,7 +405,7 @@ function setNumLetCharValues(event) {
 
     if (input.placeholder.includes('Логин')) {
         loginValue = input.value;
-    } else if (input.placeholder.includes('Пароль')) {
+    } else {
         passwordValue = input.value;
     }
 }
