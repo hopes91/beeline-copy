@@ -8,7 +8,6 @@ body {
 a {
     border: none;
     color: #191c22;
-    letter-spacing: -0.2px;
     text-decoration: none;
 }
 
@@ -21,7 +20,6 @@ button {
     border: none;
     cursor: pointer;
     font-family: 'Jost', sans-serif;
-    letter-spacing: -0.2px;
 }
 
 input {
@@ -29,13 +27,7 @@ input {
 }
 
 li {
-    letter-spacing: -0.2px;
     list-style-type: none;
-}
-
-span,
-p {
-    letter-spacing: -0.2px;
 }
 
 header {
@@ -1158,12 +1150,10 @@ header {
     color: #ffffff;
     display: block;
     font-size: 12px;
-    letter-spacing: normal;
 }
 
 .svg-wrapper.eye svg {
     cursor: pointer;
-    /* transition: opacity 0.3s; */
 }
 
 .svg-wrapper.eye svg.closed {
