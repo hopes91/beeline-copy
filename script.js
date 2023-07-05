@@ -426,7 +426,7 @@ function activateSubmitLoginButton(input) {
 
 const eyeSVGs = document.querySelectorAll('.svg-wrapper.eye svg');
 
-function toggleEye(event) {
+function toggleEyeIcon(event) {
     const svgClosed = document.querySelector('.svg-wrapper.eye svg.closed');
     const svgOpened = document.querySelector('.svg-wrapper.eye svg.opened');
     const clickedEye = event.currentTarget;
@@ -526,7 +526,7 @@ loginInputs.forEach(input => input.addEventListener('focus', focusLoginInput));
 loginInputs.forEach(input => input.addEventListener('click', focusLoginInput));
 loginInputs.forEach(input => input.addEventListener('blur', blurLoginInput));
 loginInputs.forEach(input => input.addEventListener('input', setLoginValue));
-eyeSVGs.forEach(svg => svg.addEventListener('click', toggleEye));
+eyeSVGs.forEach(svg => svg.addEventListener('click', toggleEyeIcon));
 
 window.addEventListener('keydown', manageKeyDown);
 window.addEventListener('scroll', toggleHeadersPosition);
