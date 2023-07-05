@@ -278,7 +278,7 @@ let loginValue = '';
 let passwordValue = '';
 
 function autoActivateLoginInput() {
-    const firstLoginInputs = document.querySelectorAll('.login-forms input.first')
+    const firstLoginInputs = document.querySelectorAll('.login-forms input.first');
 
     firstLoginInputs.forEach((input, index) => {
         if (index < 2) {
@@ -328,7 +328,9 @@ function activateLoginInput(event) {
 }
 
 function deactivateLoginInput() {
-    loginInputs.forEach(input => {
+    const phoneLoginInputs = document.querySelectorAll('.login-forms input.num');
+
+    phoneLoginInputs.forEach(input => {
         if (phoneValue.startsWith('+7 _')) {
             input.value = '';
             input.blur();
