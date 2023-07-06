@@ -385,20 +385,22 @@ function setNumValues(event) {
 
 function deleteNumValues(event) {
     const input = event.target;
-    let reversedPhone = phoneValue.split('').reverse().join('');
 
-    for (let i = phoneValue.length - 1; i >= 3; i--) {
-        if (phoneValue.startsWith('+7 _')) {
-            input.value = phoneValue;
+    if (phoneValue.startsWith('+7 _')) {
+        input.value = phoneValue;
+        setCaretPosition(input, findCharIndex('first-underscore'));
+    } else {
+        let reversedPhone = phoneValue.split('').reverse().join('');
 
-            setCaretPosition(input, findCharIndex('underscore'));
-        } else if (/\d/.test(phoneValue[i])) {
-            reversedPhone = reversedPhone.replace(reversedPhone[(phoneValue.length - 1) - i], '_');
-            phoneValue = reversedPhone.split('').reverse().join('');
-            input.value = phoneValue;
+        for (let i = phoneValue.length - 1; i >= 3; i--) {
+            if (/\d/.test(phoneValue[i])) {
+                reversedPhone = reversedPhone.replace(reversedPhone[(phoneValue.length - 1) - i], '_');
+                phoneValue = reversedPhone.split('').reverse().join('');
+                input.value = phoneValue;
 
-            setCaretPosition(input, i);
-            break;
+                setCaretPosition(input, i);
+                break;
+            }
         }
     }
 }
