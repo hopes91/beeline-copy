@@ -480,8 +480,6 @@ function handleArrowMoves(event) {
                 event.preventDefault();
             }
         } else if (event.key === 'ArrowRight') {
-            const caretPosition = findCaretPosition(event.target);
-    
             if (caretPosition == findCharIndex('last-digit')) {
                 event.preventDefault();
             }
