@@ -286,9 +286,9 @@ function autoFocusLoginInput() {
             input.focus();
 
             if (phoneValue.startsWith('+7 _')) {
-                setCaretPosition(input, findCharIndex('underscore'));
+                setCaretPosition(input, findCharIndex('first-underscore'));
             } else {
-                setCaretPosition(input, findCharIndex('digit'));
+                setCaretPosition(input, findCharIndex('last-digit'));
             }
         } else {
             input.value = loginValue;
@@ -306,10 +306,10 @@ function focusLoginInput(event) {
         input.focus();
 
         if (phoneValue.startsWith('+7 _')) {
-            setCaretPosition(input, findCharIndex('underscore'));
+            setCaretPosition(input, findCharIndex('first-underscore'));
         } else {
             const startChar = 3;
-            const endChar = findCharIndex('digit');
+            const endChar = findCharIndex('last-digit');
             const caretPosition = findCaretPosition(input);
 
             if (caretPosition >= startChar && caretPosition <= endChar) {
@@ -317,7 +317,7 @@ function focusLoginInput(event) {
             } else if (caretPosition < startChar) {
                 setCaretPosition(input, startChar);
             } else {
-                setCaretPosition(input, findCharIndex('digit'));
+                setCaretPosition(input, findCharIndex('last-digit'));
             }
         }
     } else if (placeholder.includes('Логин')) {
@@ -343,7 +343,7 @@ function setCaretPosition(input, position) {
 }
 
 function findCharIndex(value) {
-    if (value === 'underscore') {
+    if (value === 'first-underscore') {
         return phoneValue.search(/_/);
     } else {
         const isDigit = element => /\d/.test(element);
@@ -482,7 +482,7 @@ function handleArrowMoves(event) {
         } else if (event.key === 'ArrowRight') {
             const caretPosition = findCaretPosition(event.target);
     
-            if (caretPosition == findCharIndex('digit')) {
+            if (caretPosition == findCharIndex('last-digit')) {
                 event.preventDefault();
             }
         }
