@@ -473,9 +473,9 @@ function handleArrowMoves(event) {
     if (phoneValue.startsWith('+7 _')) {
         event.preventDefault();
     } else if (/^\+7\s\d+/.test(phoneValue)) {
+        const caretPosition = findCaretPosition(event.target) - 1;
+        
         if (event.key === 'ArrowLeft') {
-            const caretPosition = findCaretPosition(event.target) - 1;
-    
             if (caretPosition == 2) {
                 event.preventDefault();
             }
