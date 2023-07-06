@@ -347,7 +347,7 @@ function findCharIndex(value) {
         return phoneValue.search(/_/);
     } else {
         const isDigit = element => /\d/.test(element);
-        return phoneValue.split('').findLastIndex(isDigit);
+        return phoneValue.slice(3).split('').findLastIndex(isDigit) + 3;
     }
 }
 
