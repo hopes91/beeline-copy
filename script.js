@@ -308,17 +308,17 @@ function focusLoginInput(event) {
         if (phoneValue.startsWith('+7 _')) {
             setCaretPosition(input, findCharIndex('first-underscore'));
         } else {
-            const startChar = 3;
-            const endChar = findCharIndex('last-digit');
-            const caretPosition = findCaretPosition(input);
+            // const startChar = 3;
+            // const endChar = findCharIndex('last-digit');
+            // const caretPosition = findCaretPosition(input);
 
-            if (caretPosition >= startChar && caretPosition <= endChar) {
-                setCaretPosition(input, caretPosition);
-            } else if (caretPosition < startChar) {
-                setCaretPosition(input, startChar);
-            } else {
+            // if (caretPosition >= startChar && caretPosition <= endChar) {
+            //     setCaretPosition(input, caretPosition);
+            // } else if (caretPosition < startChar) {
+            //     setCaretPosition(input, startChar);
+            // } else {
                 setCaretPosition(input, findCharIndex('last-digit') + 1);
-            }
+            // }
         }
     } else if (placeholder.includes('Логин')) {
         input.value = loginValue;
