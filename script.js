@@ -288,7 +288,7 @@ function autoFocusLoginInput() {
             if (phoneValue.startsWith('+7 _')) {
                 setCaretPosition(input, findCharIndex('first-underscore'));
             } else {
-                setCaretPosition(input, findCharIndex('last-digit'));
+                setCaretPosition(input, findCharIndex('last-digit') + 1);
             }
         } else {
             input.value = loginValue;
@@ -317,7 +317,7 @@ function focusLoginInput(event) {
             } else if (caretPosition < startChar) {
                 setCaretPosition(input, startChar);
             } else {
-                setCaretPosition(input, findCharIndex('last-digit'));
+                setCaretPosition(input, findCharIndex('last-digit') + 1);
             }
         }
     } else if (placeholder.includes('Логин')) {
@@ -453,7 +453,8 @@ function manageKeyDown(event) {
         closeOnEsc();
     } else if (event.key === 'ArrowLeft' || event.key === 'ArrowRight') {
         if (loginWrapper.style.display === 'flex') {
-            handleArrowMoves(event);
+            // handleArrowMoves(event);
+            event.preventDefault();
         }
     }
 }
@@ -467,25 +468,25 @@ function closeOnEsc() {
     setInitialLoginOption();
 }
 
-function handleArrowMoves(event) {
-    if (!event.target.placeholder.startsWith('+7')) return;
+// function handleArrowMoves(event) {
+//     if (!event.target.placeholder.startsWith('+7')) return;
 
-    if (phoneValue.startsWith('+7 _')) {
-        event.preventDefault();
-    } else if (/^\+7\s\d+/.test(phoneValue)) {
-        const caretPosition = findCaretPosition(event.target) - 1;
+//     if (phoneValue.startsWith('+7 _')) {
+//         event.preventDefault();
+//     } else if (/^\+7\s\d+/.test(phoneValue)) {
+//         const caretPosition = findCaretPosition(event.target) - 1;
         
-        if (event.key === 'ArrowLeft') {
-            if (caretPosition == 2) {
-                event.preventDefault();
-            }
-        } else if (event.key === 'ArrowRight') {
-            if (caretPosition == findCharIndex('last-digit')) {
-                event.preventDefault();
-            }
-        }
-    }
-}
+//         if (event.key === 'ArrowLeft') {
+//             if (caretPosition == 2) {
+//                 event.preventDefault();
+//             }
+//         } else if (event.key === 'ArrowRight') {
+//             if (caretPosition == findCharIndex('last-digit')) {
+//                 event.preventDefault();
+//             }
+//         }
+//     }
+// }
 
 function findCaretPosition(input) {
     return input.selectionStart;
