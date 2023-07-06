@@ -398,7 +398,7 @@ function deleteNumValues(event) {
                 phoneValue = reversedPhone.split('').reverse().join('');
                 input.value = phoneValue;
 
-                setCaretPosition(input, i);
+                setCaretPosition(input, findCharIndex('last-digit') + 1);
                 break;
             }
         }
