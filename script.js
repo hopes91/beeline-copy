@@ -346,8 +346,8 @@ function findCharIndex(value) {
     if (value === 'underscore') {
         return phoneValue.search(/_/);
     } else {
-        const reversedPhone = phoneValue.split('').reverse().join('');
-        return phoneValue.length - reversedPhone.search(/\d/);
+        const isDigit = element => /\d/.test(element);
+        return phoneValue.split('').findLastIndex(isDigit);
     }
 }
 
