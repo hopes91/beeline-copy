@@ -286,7 +286,7 @@ function autoFocusLoginInput() {
             input.focus();
 
             if (phoneValue.startsWith('+7 _')) {
-                setCaretPosition(input, findCharIndex('first-underscore'));
+                setCaretPosition(input, 3);
             } else {
                 setCaretPosition(input, findCharIndex('last-digit') + 1);
             }
@@ -306,7 +306,7 @@ function focusLoginInput(event) {
         input.focus();
 
         if (phoneValue.startsWith('+7 _')) {
-            setCaretPosition(input, findCharIndex('first-underscore'));
+            setCaretPosition(input, 3);
         } else {
             // const startChar = 3;
             // const endChar = findCharIndex('last-digit');
@@ -343,9 +343,7 @@ function setCaretPosition(input, position) {
 }
 
 function findCharIndex(value) {
-    if (value === 'first-underscore') {
-        return phoneValue.search(/_/);
-    } else {
+    if (value === 'last-digit') {
         const isDigit = element => /\d/.test(element);
         return phoneValue.slice(3).split('').findLastIndex(isDigit) + 3;
     }
@@ -388,7 +386,7 @@ function deleteNumValues(event) {
 
     if (phoneValue.startsWith('+7 _')) {
         input.value = phoneValue;
-        setCaretPosition(input, findCharIndex('first-underscore'));
+        setCaretPosition(input, 3);
     } else {
         let reversedPhone = phoneValue.split('').reverse().join('');
 
