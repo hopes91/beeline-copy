@@ -353,14 +353,14 @@ function setLoginValue(event) {
     if (event.target.placeholder.includes('+7')) {
         if (event.inputType === 'deleteContentBackward') {
             deleteNumValues(event);
+        } else {
+            setNumValues(event);
+            activateSubmitLoginButton(event.target);
         }
-
-        setNumValues(event);
     } else {
         setNumLetCharValues(event);
+        activateSubmitLoginButton(event.target);
     }
-    
-    activateSubmitLoginButton(event.target);
 }
 
 function setNumValues(event) {
