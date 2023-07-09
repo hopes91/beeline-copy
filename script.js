@@ -388,18 +388,45 @@ function deleteNumValues(event) {
         input.value = phoneValue;
         setCaretPosition(input, 3);
     } else {
-        let reversedPhone = phoneValue.split('').reverse().join('');
+        const caretPosition = findCaretPosition(input);
+        const typedDigits = phoneValue.slice(3).match(/\d/g);
+        const deletedDigit = phoneValue[caretPosition];
+        const deletedIndex = typedDigits.indexOf(deletedDigit);
 
-        for (let i = phoneValue.length - 1; i >= 3; i--) {
-            if (/\d/.test(phoneValue[i])) {
-                reversedPhone = reversedPhone.replace(reversedPhone[(phoneValue.length - 1) - i], '_');
-                phoneValue = reversedPhone.split('').reverse().join('');
-                input.value = phoneValue;
+        if (/\d/.test(deletedDigit)) {
+            typedDigits.splice(deletedIndex, 1);
+        } else {
+            manageCaretPosition(input, caretPosition);
+        }
 
-                setCaretPosition(input, findCharIndex('last-digit') + 1);
-                break;
+        let initialStr = '___ ___-__-__';
+        let checkInd = 0;
+
+        for (let ind = 0; ind < initialStr.length - 1; ind++) {
+            if (initialStr[ind] === '_' && typeof typedDigits[checkInd] !== 'undefined') {
+                initialStr = initialStr.replace(initialStr[ind], typedDigits[checkInd]);
+                checkInd += 1;
             }
         }
+
+        phoneValue = `+7 ${initialStr}`;
+        input.value = phoneValue;
+        manageCaretPosition(input, caretPosition);
+    }
+}
+
+function manageCaretPosition(input, caretPosition) {
+    const firstDigitIndex = 3;
+    const lastDigitIndex = findCharIndex('last-digit');
+
+    if (caretPosition <= firstDigitIndex) {
+        setCaretPosition(input, firstDigitIndex);
+    } else if (caretPosition > lastDigitIndex) {
+        setCaretPosition(input, lastDigitIndex + 1);
+    } else if (/\d/.test(phoneValue[caretPosition - 1])) {
+        setCaretPosition(input, caretPosition);
+    } else if (!/\d/.test(phoneValue[caretPosition - 1])) {
+        setCaretPosition(input, caretPosition - 1);
     }
 }
 
