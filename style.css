@@ -958,7 +958,7 @@ header {
     position: fixed;
     top: 0;
     width: 100vw;
-    z-index: 100;
+    z-index: 30;
 }
 
 .login {
@@ -970,7 +970,7 @@ header {
     min-height: 455px;
     opacity: 0;
     width: 555px;
-    z-index: 101;
+    z-index: 31;
 }
 
 @keyframes increase-opacity {
