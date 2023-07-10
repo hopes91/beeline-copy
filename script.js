@@ -22,11 +22,25 @@ const regionsWrapper = document.querySelector('.regions-wrapper');
 
 function showRegions() {
     regionsWrapper.style.display = 'block';
+
+    toggleRegionsSearchFocus('focus');
 }
 
 function hideRegions(event) {
     if (event.target.classList.contains('close')) {
         regionsWrapper.style.display = 'none';
+
+        toggleRegionsSearchFocus('blur');
+    }
+}
+
+function toggleRegionsSearchFocus(value) {
+    const regionsSearchBar = document.getElementById('regions-search');
+
+    if (value === 'focus') {
+        regionsSearchBar.focus();
+    } else {
+        regionsSearchBar.blur();
     }
 }
 
