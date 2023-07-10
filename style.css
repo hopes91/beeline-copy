@@ -1125,7 +1125,7 @@ header {
     position: absolute;
     top: -30px;
     width: 220px;
-    z-index: 101;
+    z-index: 31;
 }
 
 .note-wrapper::before {
