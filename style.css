@@ -809,16 +809,16 @@ header {
     z-index: 1;
 }
 
-.two-columns .column {
+.two-columns .catalog-column {
     width: 50%;
 }
 
-.column .section {
+.catalog-column .section {
     margin-bottom: 8px;
     width: 100%;
 }
 
-.column .subtitle {
+.catalog-column .subtitle {
     cursor: default;
     display: block;
     font-size: 16px;
@@ -826,23 +826,23 @@ header {
     margin-bottom: 16px;
 }
 
-.column ul {
+.catalog-column ul {
     margin: 0;
     padding: 0;
 }
 
-.column li {
+.catalog-column li {
     line-height: 1.3;
     padding-bottom: 8px;
 }
 
-.column a {
+.catalog-column a {
     font-size: 14px;
     transition: opacity 0.3s;
     white-space: nowrap;
 }
 
-.column a:hover {
+.catalog-column a:hover {
     opacity: 0.7;
 }
 
