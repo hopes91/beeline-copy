@@ -185,7 +185,7 @@ header {
     margin-bottom: 24px;
 }
 
-.regions .close {
+.regions button.close {
     font-size: 0;
     padding: 12px;
     position: absolute;
@@ -195,7 +195,7 @@ header {
     top: 32px;
 }
 
-.regions .close:hover {
+.regions button.close:hover {
     stroke: #f45151;
 }
 
